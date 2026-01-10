@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Knowledge - Turaab Ali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #764ba2;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .knowledge-card {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .knowledge-card h4 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 20px; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Technical Knowledge</h1>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pc-building/">Pc Building</a>
+      <a href="/problem-solving/">Problem Solving</a>
+      <a href="/robotics/">Robotics</a>
+      <a href="/technical/">Technical</a>
+      <a href="/troubleshooting/">Troubleshooting</a>
+      <a href="/customer-service/">Customer Service</a>
+      <a href="/contact-me/">Contact Me</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>About This Skill</h2>
+            <p style="font-size: 1.1em; line-height: 1.8;">
+                My deep understanding of computer architecture, components, and emerging technologies allows me to make informed 
+                decisions when building PCs, troubleshooting issues, and advising clients. I stay current with industry trends 
+                and continuously expand my knowledge through hands-on experience and research.
+            </p>
+        </section>
+
+        <section>
+            <h2>Core Technical Knowledge Areas</h2>
+            
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <h4>Computer Architecture</h4>
+                    <ul>
+                        <li>CPU architectures (x86, ARM)</li>
+                        <li>Cache hierarchy and memory systems</li>
+                        <li>PCIe lanes and bandwidth</li>
+                        <li>Multi-threading and parallel processing</li>
+                        <li>Understanding bottlenecks and performance limits</li>
+                    </ul>
+                </div>
+
+                <div class="knowledge-card">
+                    <h4>Component Compatibility</h4>
+                    <ul>
+                        <li>Socket types and CPU/motherboard matching</li>
+                        <li>RAM compatibility (DDR4/DDR5, speeds, timings)</li>
+                        <li>PSU connectors and power requirements</li>
+                        <li>Form factors (ATX, mATX, ITX)</li>
+                        <li>Thermal solution clearances</li>
+                    </ul>
+                </div>
+
+                <div class="knowledge-card">
+                    <h4>Operating Systems</h4>
+                    <ul>
+                        <li>Windows installation and configuration</li>
+                        <li>Linux distributions and package management</li>
+                        <li>Driver installation and management</li>
+                        <li>BIOS/UEFI settings and boot processes</li>
+                        <li>Dual-boot configurations</li>
+                    </ul>
+                </div>
+
+                <div class="knowledge-card">
+                    <h4>Storage Technology</h4>
+                    <ul>
+                        <li>NVMe vs SATA SSDs performance differences</li>
+                        <li>M.2 form factors and key types</li>
+                        <li>RAID configurations</li>
+                        <li>Storage capacity planning</li>
+                        <li>Data backup strategies</li>
+                    </ul>
+                </div>
+
+                <div class="knowledge-card">
+                    <h4>Graphics & Display</h4>
+                    <ul>
+                        <li>GPU architectures (NVIDIA, AMD)</li>
+                        <li>VRAM requirements for different workloads</li>
+                        <li>Display connections (HDMI, DisplayPort)</li>
+                        <li>Resolution and refresh rate scaling</li>
+                        <li>Ray tracing and modern graphics features</li>
+                    </ul>
+                </div>
+
+                <div class="knowledge-card">
+                    <h4>Networking</h4>
+                    <ul>
+                        <li>Ethernet vs WiFi performance</li>
+                        <li>Network card capabilities</li>
+                        <li>Basic network troubleshooting</li>
+                        <li>Understanding latency and bandwidth</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Industry Awareness</h2>
+            <h3>Current Technology Trends</h3>
+            <ul>
+                <li>Following CPU and GPU release cycles</li>
+                <li>Understanding performance benchmarks and reviews</li>
+                <li>Tracking price trends and value propositions</li>
+                <li>Staying informed about new technologies (DDR5, PCIe 5.0, etc.)</li>
+                <li>Monitoring supply chain and availability issues</li>
+            </ul>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Balancing performance, cost, and future upgradability</li>
+                <li>Avoiding common compatibility mistakes</li>
+                <li>Proper thermal management principles</li>
+                <li>Cable management for optimal airflow</li>
+                <li>ESD protection during component handling</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How I Apply This Knowledge</h2>
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <h4>Build Planning</h4>
+                    <p>Using technical knowledge to select optimal components that work together efficiently within budget constraints.</p>
+                </div>
+                <div class="knowledge-card">
+                    <h4>Troubleshooting</h4>
+                    <p>Understanding how systems work allows me to quickly identify where problems originate and fix them.</p>
+                </div>
+                <div class="knowledge-card">
+                    <h4>Client Consultation</h4>
+                    <p>Explaining technical concepts in simple terms and making recommendations based on specific needs.</p>
+                </div>
+                <div class="knowledge-card">
+                    <h4>Performance Optimization</h4>
+                    <p>Knowing where bottlenecks occur helps me optimize systems for maximum performance.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
+    </footer>
+</body>
+</html>

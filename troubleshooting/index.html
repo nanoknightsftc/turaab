@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Troubleshooting - Turaab Ali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #764ba2;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .experience-item {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .experience-item h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .skill-item h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 20px; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hardware Troubleshooting</h1>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pc-building/">Pc Building</a>
+      <a href="/problem-solving/">Problem Solving</a>
+      <a href="/robotics/">Robotics</a>
+      <a href="/technical/">Technical</a>
+      <a href="/troubleshooting/">Troubleshooting</a>
+      <a href="/customer-service/">Customer Service</a>
+      <a href="/contact-me/">Contact Me</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>About This Skill</h2>
+            <p style="font-size: 1.1em; line-height: 1.8;">
+                I excel at diagnosing and resolving complex hardware issues through systematic troubleshooting and testing. 
+                My methodical approach allows me to quickly identify problems, whether it's a faulty component, thermal issue, 
+                or compatibility problem, and implement effective solutions.
+            </p>
+        </section>
+
+        <section>
+            <h2>Experience & Real-World Problems Solved</h2>
+            
+            <div class="experience-item">
+                <h4>Boot Issues & No POST</h4>
+                <p>Successfully diagnosed and resolved multiple cases of PCs failing to boot or POST.</p>
+                <ul>
+                    <li>Identified faulty RAM modules through systematic testing</li>
+                    <li>Resolved motherboard compatibility issues with new hardware</li>
+                    <li>Fixed improper CPU installations causing boot failures</li>
+                    <li>Diagnosed failed PSUs causing intermittent power issues</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Thermal Management Issues</h4>
+                <p>Resolved overheating problems affecting system performance and stability.</p>
+                <ul>
+                    <li>Identified inadequate cooling causing CPU/GPU throttling</li>
+                    <li>Reapplied thermal paste on overheating components</li>
+                    <li>Reconfigured case fan setup for improved airflow</li>
+                    <li>Diagnosed and cleared dust buildup affecting cooling</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Performance Degradation</h4>
+                <p>Diagnosed and fixed systems experiencing unexpected slowdowns and crashes.</p>
+                <ul>
+                    <li>Identified failing hard drives causing system stuttering</li>
+                    <li>Resolved RAM issues causing random crashes</li>
+                    <li>Fixed driver conflicts affecting GPU performance</li>
+                    <li>Diagnosed power delivery issues from inadequate PSUs</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Component Upgrades & Compatibility</h4>
+                <p>Helped clients upgrade systems while ensuring compatibility and optimal performance.</p>
+                <ul>
+                    <li>Verified PSU wattage for new GPU installations</li>
+                    <li>Confirmed RAM compatibility with existing motherboards</li>
+                    <li>Checked physical clearance for larger coolers/GPUs</li>
+                    <li>Ensured BIOS support for new CPUs</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Troubleshooting Approach</h2>
+            <h3>My Diagnostic Process</h3>
+            <ul>
+                <li><strong>Gather Information:</strong> Understanding the problem symptoms and when they occur</li>
+                <li><strong>Isolate Variables:</strong> Testing components individually to narrow down the issue</li>
+                <li><strong>Check the Basics:</strong> Verifying connections, power, and obvious physical issues</li>
+                <li><strong>Systematic Testing:</strong> Using process of elimination to identify faulty components</li>
+                <li><strong>Verify the Fix:</strong> Stress testing and monitoring to ensure the problem is resolved</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Capabilities</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Component Testing</h4>
+                    <p>Testing RAM, CPUs, GPUs, PSUs, and storage drives to identify failures.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Thermal Analysis</h4>
+                    <p>Using monitoring software to identify overheating issues and improve cooling.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Power Issues</h4>
+                    <p>Diagnosing PSU failures, power delivery problems, and voltage irregularities.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Hardware Testing Tools</h4>
+                    <p>Using MemTest86, Prime95, FurMark, CrystalDiskInfo, and other diagnostic tools.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Physical Inspection</h4>
+                    <p>Identifying physical damage, loose connections, and worn components.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Driver & Firmware</h4>
+                    <p>Resolving issues caused by outdated or incompatible drivers and BIOS versions.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Solving - Turaab Ali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #764ba2;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .experience-item {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .experience-item h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .problem-example {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid #764ba2;
+        }
+
+        .problem-example strong {
+            color: #764ba2;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .approach-card {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .approach-card h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 20px; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Problem Solving</h1>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pc-building/">Pc Building</a>
+      <a href="/problem-solving/">Problem Solving</a>
+      <a href="/robotics/">Robotics</a>
+      <a href="/technical/">Technical</a>
+      <a href="/troubleshooting/">Troubleshooting</a>
+      <a href="/customer-service/">Customer Service</a>
+      <a href="/contact-me/">Contact Me</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>About This Skill</h2>
+            <p style="font-size: 1.1em; line-height: 1.8;">
+                Whether it's a PC that won't boot, a robot mechanism that's failing during competition, or finding the right 
+                components within a tight budget, I approach every challenge methodically. My problem-solving ability comes 
+                from combining technical knowledge with analytical thinking and staying calm under pressure.
+            </p>
+        </section>
+
+        <section>
+            <h2>Real Problem-Solving Examples</h2>
+            
+            <div class="experience-item">
+                <h4>PC Won't Boot After Upgrade</h4>
+                <div class="problem-example">
+                    <p><strong>Problem:</strong> Client's PC wouldn't POST after installing a new graphics card.</p>
+                    <p><strong>Approach:</strong> Systematically tested each component, checked power connections, and verified PSU wattage.</p>
+                    <p><strong>Solution:</strong> Discovered the PSU was underpowered for the new GPU. Upgraded to appropriate PSU and system worked perfectly.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h4>Random System Crashes During Gaming</h4>
+                <div class="problem-example">
+                    <p><strong>Problem:</strong> System would crash randomly during intensive games but work fine otherwise.</p>
+                    <p><strong>Approach:</strong> Monitored temperatures, ran stress tests, checked event logs, and tested RAM.</p>
+                    <p><strong>Solution:</strong> Found CPU was overheating under load due to improperly mounted cooler. Reseated cooler with fresh thermal paste.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h4>Robot Mechanism Failing During Match</h4>
+                <div class="problem-example">
+                    <p><strong>Problem:</strong> Robot's lifting mechanism would intermittently fail during FTC competition matches.</p>
+                    <p><strong>Approach:</strong> Quick diagnosis between matches, checked connections, motor stalls, and weight distribution.</p>
+                    <p><strong>Solution:</strong> Identified loose wire connection causing power loss. Secured connection and reinforced for remaining matches.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h4>Budget Build Performance Issues</h4>
+                <div class="problem-example">
+                    <p><strong>Problem:</strong> Client had $600 budget but wanted high gaming performance.</p>
+                    <p><strong>Approach:</strong> Researched price-to-performance ratios, identified bottlenecks, and prioritized components.</p>
+                    <p><strong>Solution:</strong> Allocated more budget to GPU, chose cost-effective CPU/motherboard combo, and planned upgrade path. Client got 60+ FPS in target games.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>My Problem-Solving Approach</h2>
+            
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <h4>1. Define the Problem</h4>
+                    <p>Clearly identify what's wrong, when it happens, and what the symptoms are.</p>
+                </div>
+                <div class="approach-card">
+                    <h4>2. Gather Information</h4>
+                    <p>Collect all relevant data, error messages, symptoms, and context.</p>
+                </div>
+                <div class="approach-card">
+                    <h4>3. Form Hypotheses</h4>
+                    <p>Based on symptoms, develop potential explanations for the problem.</p>
+                </div>
+                <div class="approach-card">
+                    <h4>4. Test Systematically</h4>
+                    <p>Test each hypothesis methodically, changing one variable at a time.</p>
+                </div>
+                <div class="approach-card">
+                    <h4>5. Isolate the Cause</h4>
+                    <p>Use process of elimination to narrow down to the root cause.</p>
+                </div>
+                <div class="approach-card">
+                    <h4>6. Implement Solution</h4>
+                    <p>Apply the fix, then verify it resolves the issue completely.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Problem-Solving Skills</h2>
+            
+            <h3>Analytical Thinking</h3>
+            <ul>
+                <li>Breaking complex problems into smaller, manageable parts</li>
+                <li>Identifying patterns and common causes</li>
+                <li>Using logic to eliminate possibilities</li>
+                <li>Drawing on past experience with similar issues</li>
+            </ul>
+
+            <h3>Resourcefulness</h3>
+            <ul>
+                <li>Finding creative solutions within constraints</li>
+                <li>Using available tools and resources effectively</li>
+                <li>Researching unfamiliar problems quickly</li>
+                <li>Adapting when the first approach doesn't work</li>
+            </ul>
+
+            <h3>Under Pressure</h3>
+            <ul>
+                <li>Staying calm when facing time constraints</li>
+                <li>Making decisions quickly during FTC competitions</li>
+                <li>Prioritizing critical issues over minor ones</li>
+                <li>Maintaining focus despite distractions</li>
+            </ul>
+
+            <h3>Learning from Failure</h3>
+            <ul>
+                <li>Viewing mistakes as learning opportunities</li>
+                <li>Documenting problems and solutions for future reference</li>
+                <li>Improving troubleshooting process based on experience</li>
+                <li>Sharing knowledge with teammates and clients</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Where I Apply Problem-Solving</h2>
+            <ul>
+                <li><strong>PC Building:</strong> Resolving component compatibility issues and budget constraints</li>
+                <li><strong>Troubleshooting:</strong> Diagnosing mysterious hardware failures and performance issues</li>
+                <li><strong>FTC Robotics:</strong> Fixing mechanical failures and optimizing robot performance</li>
+                <li><strong>Client Consultation:</strong> Finding the right solution that meets their specific needs</li>
+                <li><strong>Daily Life:</strong> Applying analytical thinking to all kinds of challenges</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
+    </footer>
+</body>
+</html>

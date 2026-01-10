@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics - Turaab Ali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #764ba2;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .image-card:hover {
+            transform: scale(1.03);
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #764ba215 0%, #764ba215 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2em;
+        }
+
+        .image-card .caption {
+            padding: 15px;
+            background: #f9f9f9;
+            text-align: center;
+            font-weight: 600;
+            color: #764ba2;
+        }
+
+        .experience-item {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .experience-item h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .external-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #764ba2;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 30px;
+            border: 2px solid #764ba2;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .external-link:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 20px; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Robotics (FTC)</h1>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pc-building/">Pc Building</a>
+      <a href="/problem-solving/">Problem Solving</a>
+      <a href="/robotics/">Robotics</a>
+      <a href="/technical/">Technical</a>
+      <a href="/troubleshooting/">Troubleshooting</a>
+      <a href="/customer-service/">Customer Service</a>
+      <a href="/contact-me/">Contact Me</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>About This Skill</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
+                As an active member of my FIRST Tech Challenge (FTC) team, I work on all aspects of robot design, programming, 
+                and competition strategy. FTC has taught me to think critically under pressure, collaborate effectively with teammates, 
+                and approach complex engineering challenges with creativity and precision.
+            </p>
+            <a href="https://nanoknightsftc.com/" target="_blank" class="external-link">Visit Team Website →</a>
+        </section>
+
+        <section>
+            <h2>Experience & Competition History</h2>
+            
+            <div class="experience-item">
+                <h4>Robot Design & Assembly</h4>
+                <p>Hands-on experience designing and building competition-ready robots from scratch.</p>
+                <ul>
+                    <li>Mechanical design for game-specific challenges</li>
+                    <li>Selecting motors, servos, and sensors for optimal performance</li>
+                    <li>Building robust mechanisms that withstand competition stress</li>
+                    <li>Iterative prototyping and testing to improve designs</li>
+                    <li>Weight distribution and center of gravity optimization</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Programming & Autonomous</h4>
+                <p>Developed autonomous routines and driver-controlled programs for competition robots.</p>
+                <ul>
+                    <li>Java programming for FTC robot control</li>
+                    <li>Sensor integration (Cameras, color sensors, distance sensors)</li>
+                    <li>Autonomous path planning and navigation</li>
+                    <li>PID control loops for precise movements</li>
+                    <li>Debugging and optimization under time pressure</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Competition Strategy</h4>
+                <p>Collaborated with team to develop winning strategies for FTC competitions.</p>
+                <ul>
+                    <li>Analyzing game manuals to identify scoring opportunities</li>
+                    <li>Scouting other teams and adapting strategies</li>
+                    <li>Alliance selection and cooperative gameplay</li>
+                    <li>Quick repairs and adjustments between matches</li>
+                    <li>Maintaining composure during high-pressure situations</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Team Collaboration</h4>
+                <p>Working effectively with teammates on all aspects of the robot and competition preparation.</p>
+                <ul>
+                    <li>Dividing tasks based on team members' strengths</li>
+                    <li>Clear communication during design and testing</li>
+                    <li>Supporting teammates during competitions</li>
+                    <li>Documenting our process in the engineering notebook</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Robot Gallery</h2>
+            <p style="margin-bottom: 20px;">Photos from FTC competitions and robot builds:</p>
+            
+            <div class="image-gallery">
+                <div class="image-card">
+                    <div class="placeholder-image">Add Robot Image 1</div>
+                    <div class="caption">Competition Robot</div>
+                </div>
+                <div class="image-card">
+                    <div class="placeholder-image">Add Robot Image 2</div>
+                    <div class="caption">Mechanism Design</div>
+                </div>
+                <div class="image-card">
+                    <div class="placeholder-image">Add Robot Image 3</div>
+                    <div class="caption">Team at Competition</div>
+                </div>
+                <div class="image-card">
+                    <div class="placeholder-image">Add Robot Image 4</div>
+                    <div class="caption">Robot in Action</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills Developed</h2>
+            <h3>Mechanical Engineering</h3>
+            <ul>
+                <li>Understanding gear ratios and mechanical advantage</li>
+                <li>Designing custom brackets and mounts</li>
+                <li>Using power tools safely and effectively</li>
+                <li>Material selection for strength and weight</li>
+            </ul>
+
+            <h3>Programming & Software</h3>
+            <ul>
+                <li>Java programming for robotics applications</li>
+                <li>Version control with Git for team collaboration</li>
+                <li>Sensor calibration and data processing</li>
+                <li>Real-time debugging and troubleshooting</li>
+            </ul>
+
+            <h3>Problem Solving Under Pressure</h3>
+            <ul>
+                <li>Quick diagnosis of mechanical failures</li>
+                <li>Adapting to unexpected challenges during matches</li>
+                <li>Making strategic decisions in real-time</li>
+                <li>Learning from failures and iterating quickly</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
+    </footer>
+</body>
+</html>
