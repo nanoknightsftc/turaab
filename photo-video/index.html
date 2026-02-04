@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography & Videography - Turaab Ali</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #764ba2;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        .experience-item {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .experience-item h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: #764ba215;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .skill-card h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 20px; }
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Photography & Videography</h1>
+    </header>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pc-building/">Pc Building</a>
+      <a href="/problem-solving/">Problem Solving</a>
+      <a href="/robotics/">Robotics</a>
+      <a href="/technical/">Technical</a>
+      <a href="/troubleshooting/">Troubleshooting</a>
+      <a href="/photo-video/">Photography & Videography</a>
+      <a href="/contact-me/">Contact Me</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>About This Skill</h2>
+            <p style="font-size: 1.1em; line-height: 1.8;">
+                I believe that technical expertise must be paired with artistic vision and genuine understanding of the client's story. 
+                My approach to Photography & Videography focuses on capturing authentic moments, understanding what clients want to convey, 
+                and delivering visual content that exceeds expectations.
+            </p>
+        </section>
+
+        <section>
+            <h2>My Equipment & Setup</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
+                As a high school student passionate about videography, I've built a professional-grade setup 
+                for my work with the Ismaili Communications team (IComms). While I'm not currently seeking paid work, 
+                I'm actively developing my skills and expanding my portfolio.
+            </p>
+            
+            <div class="experience-item">
+                <h4>Camera & Recording Equipment</h4>
+                <ul>
+                    <li><strong>Nikon Z7</strong> - Professional full-frame mirrorless camera</li>
+                    <li><strong>Nikkor 24-70mm lens</strong> - Versatile zoom for various shooting scenarios</li>
+                    <li><strong>3 batteries + charger</strong> - Extended shooting capability</li>
+                    <li><strong>DJI RS4 Mini</strong> - Gimbal stabilizer for smooth video footage</li>
+                    <li><strong>DJI Mic Minis</strong> - Wireless microphone system for professional audio</li>
+                    <li><strong>Flash unit</strong> - Additional lighting options</li>
+                    <li><strong>IEMs</strong> - For monitoring audio during recording</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Editing Workstation</h4>
+                <p><strong>Custom-built PC optimized for video editing and photography:</strong></p>
+                <ul>
+                    <li><strong>AMD Radeon RX 9070 XT</strong> - High-performance GPU for rendering</li>
+                    <li><strong>AMD Ryzen 7 9700X</strong> - Powerful 8-core processor</li>
+                    <li><strong>32GB DDR5-6000</strong> - Fast memory for smooth editing</li>
+                    <li><strong>1TB NVMe SSD</strong> - Primary drive for OS and applications</li>
+                    <li><strong>3x 1TB SATA SSDs</strong> - Fast project storage</li>
+                    <li><strong>1x 4TB HDD</strong> - Additional media storage</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Storage & Backup</h4>
+                <ul>
+                    <li><strong>NAS System</strong> - Network-attached storage for file management</li>
+                    <li><strong>2x 500GB drives in RAID 1 (mirror)</strong> - Redundant storage for important files</li>
+                    <li><strong>1.5TB available storage</strong> - Room for ongoing projects</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Software Suite</h4>
+                <ul>
+                    <li><strong>Adobe Premiere Pro</strong> - Professional video editing</li>
+                    <li><strong>Adobe Lightroom</strong> - Photo editing and color grading</li>
+                    <li><strong>Adobe Photoshop</strong> - Advanced image manipulation</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Photography & Videography Experience</h2>
+            
+            <div class="experience-item">
+                <h4>Understanding Client Vision</h4>
+                <p>Taking time to learn what clients want to communicate through their visual content.</p>
+                <ul>
+                    <li>Discussing the purpose and audience for photos/videos</li>
+                    <li>Understanding aesthetic preferences and style</li>
+                    <li>Exploring mood boards and visual references</li>
+                    <li>Identifying the story or message to convey</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Clear Creative Communication</h4>
+                <p>Explaining technical and creative concepts in accessible terms.</p>
+                <ul>
+                    <li>Discussing lighting, composition, and framing choices</li>
+                    <li>Explaining equipment capabilities and limitations</li>
+                    <li>Providing examples of different shooting styles</li>
+                    <li>Guiding clients through the creative process</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Setting Realistic Expectations</h4>
+                <p>Being honest about what's achievable within budget and timeline.</p>
+                <ul>
+                    <li>Providing accurate timelines for shooting and editing</li>
+                    <li>Explaining deliverable formats and usage rights</li>
+                    <li>Being upfront about weather/location challenges</li>
+                    <li>Following through on promised deliverables</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h4>Post-Production Excellence</h4>
+                <p>Ensuring client satisfaction through the editing process.</p>
+                <ul>
+                    <li>Providing previews and seeking feedback</li>
+                    <li>Making revisions based on client input</li>
+                    <li>Delivering files in requested formats</li>
+                    <li>Being available for questions about final products</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Communication Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Active Listening</h4>
+                    <p>Understanding the client's vision and what they hope to achieve with the final product.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Patience</h4>
+                    <p>Taking time to ensure clients feel comfortable and confident during shoots.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Transparency</h4>
+                    <p>Being honest about costs, timelines, and creative possibilities.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Adaptability</h4>
+                    <p>Adjusting shooting style and approach based on client comfort and project needs.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Problem Resolution</h4>
+                    <p>Addressing concerns quickly and finding creative solutions that satisfy the client.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Professionalism</h4>
+                    <p>Maintaining a respectful, reliable, and courteous approach in all interactions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>My Photography & Videography Philosophy</h2>
+            <ul>
+                <li><strong>Clients' vision comes first:</strong> Their story and satisfaction are the top priority</li>
+                <li><strong>Authenticity over perfection:</strong> Capturing genuine moments that resonate</li>
+                <li><strong>Long-term relationships:</strong> Building trust leads to repeat clients and referrals</li>
+                <li><strong>Quality over quantity:</strong> Taking the time to get the shot right</li>
+                <li><strong>Continuous improvement:</strong> Learning from each project to refine my craft</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
+    </footer>
+</body>
+</html>
