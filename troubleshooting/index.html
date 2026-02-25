@@ -5,242 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardware Troubleshooting - Turaab Ali</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s ease;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-            text-align: center;
-        }
-
-        nav a {
-            color: #764ba2;
-            text-decoration: none;
-            margin: 0 20px;
-            padding: 10px 15px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #764ba2;
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease;
-        }
-
-        h2 {
-            color: #764ba2;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #764ba2;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #764ba2;
-            font-size: 1.5em;
-            margin: 25px 0 15px 0;
-        }
-
-        .experience-item {
-            background: #764ba215;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-            margin-bottom: 20px;
-        }
-
-        .experience-item h4 {
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-top: 15px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .skill-item {
-            background: #764ba215;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-        }
-
-        .skill-item h4 {
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 30px 20px; }
-            nav a { display: block; margin: 10px 0; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
+        header p { font-size: 1.1em; opacity: 0.95; animation: fadeInUp 1s ease; }
+        nav { background: white; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; text-align: center; }
+        nav a { color: #764ba2; text-decoration: none; margin: 0 20px; padding: 10px 15px; font-weight: 600; transition: all 0.3s; border-radius: 5px; }
+        nav a:hover { background: #764ba2; color: white; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: white; margin: 30px 0; padding: 50px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: fadeIn 1s ease; }
+        h2 { color: #764ba2; font-size: 2.2em; margin-bottom: 30px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
+        h3 { color: #764ba2; font-size: 1.5em; margin: 25px 0 15px 0; }
+        .experience-item { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; margin-bottom: 20px; }
+        .experience-item h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.3em; }
+        ul { margin-left: 20px; margin-top: 15px; }
+        ul li { margin-bottom: 10px; line-height: 1.7; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .skill-item { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; }
+        .skill-item h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.2em; }
+        .context-tag { display: inline-block; background: #764ba2; color: white; font-size: 0.75em; font-weight: 600; padding: 3px 10px; border-radius: 12px; margin-bottom: 10px; }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { section { padding: 30px 20px; } nav a { display: block; margin: 10px 0; } }
     </style>
 </head>
 <body>
     <header>
         <h1>Hardware Troubleshooting</h1>
+        <p>Diagnosing and resolving hardware issues across personal, family, and professional systems</p>
     </header>
 
     <nav>
-      <a href="/">Home</a>
-      <a href="/pc-building/">Pc Building</a>
-      <a href="/problem-solving/">Problem Solving</a>
-      <a href="/robotics/">Robotics</a>
-      <a href="/technical/">Technical</a>
-      <a href="/troubleshooting/">Troubleshooting</a>
-      <a href="/photo-video/">Photography & Videography</a>
-      <a href="/contact-me/">Contact Me</a>
+        <a href="/">Home</a>
+        <a href="/pc-building/">PC Building</a>
+        <a href="/problem-solving/">Problem Solving</a>
+        <a href="/robotics/">Robotics</a>
+        <a href="/technical/">Technical</a>
+        <a href="/troubleshooting/">Troubleshooting</a>
+        <a href="/photo-video/">Photography & Videography</a>
+        <a href="/contact-me/">Contact Me</a>
     </nav>
 
     <div class="container">
+
         <section>
             <h2>About This Skill</h2>
-            <p style="font-size: 1.1em; line-height: 1.8;">
-                I excel at diagnosing and resolving complex hardware issues through systematic troubleshooting and testing. 
-                My methodical approach allows me to quickly identify problems, whether it's a faulty component, thermal issue, 
-                or compatibility problem, and implement effective solutions.
-            </p>
+            <p style="font-size: 1.1em; line-height: 1.8;">Troubleshooting hardware is something I have developed naturally through building and maintaining my own systems, helping family members and friends with their PCs, and supporting the Windows Server 2022 setup at Baqir CPA. When something goes wrong I take a methodical approach, starting with the most likely cause and working outward until the issue is isolated and fixed. Most problems have a logical root cause once you know what to look for.</p>
         </section>
 
         <section>
-            <h2>Experience & Real-World Problems Solved</h2>
-            
+            <h2>Real-World Troubleshooting Experience</h2>
+
             <div class="experience-item">
-                <h4>Boot Issues & No POST</h4>
-                <p>Successfully diagnosed and resolved multiple cases of PCs failing to boot or POST.</p>
+                <div class="context-tag">Personal Builds</div>
+                <h4>Boot Issues and No POST</h4>
+                <p>Diagnosed and resolved cases of PCs failing to boot or reach POST during and after builds, developing a reliable process for isolating the cause quickly.</p>
                 <ul>
-                    <li>Identified faulty RAM modules through systematic testing</li>
-                    <li>Resolved motherboard compatibility issues with new hardware</li>
-                    <li>Fixed improper CPU installations causing boot failures</li>
-                    <li>Diagnosed failed PSUs causing intermittent power issues</li>
+                    <li>Identified faulty or improperly seated RAM modules through single-stick testing</li>
+                    <li>Resolved motherboard compatibility issues with new hardware requiring BIOS updates</li>
+                    <li>Fixed improper CPU seating causing boot failures</li>
+                    <li>Diagnosed PSU issues causing intermittent power failures</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <h4>Thermal Management Issues</h4>
-                <p>Resolved overheating problems affecting system performance and stability.</p>
+                <div class="context-tag">Personal and Family Systems</div>
+                <h4>Thermal Management and Overheating</h4>
+                <p>Identified and resolved overheating issues causing throttling, instability, and unexpected shutdowns across multiple machines.</p>
                 <ul>
-                    <li>Identified inadequate cooling causing CPU/GPU throttling</li>
-                    <li>Reapplied thermal paste on overheating components</li>
-                    <li>Reconfigured case fan setup for improved airflow</li>
-                    <li>Diagnosed and cleared dust buildup affecting cooling</li>
+                    <li>Diagnosed CPU and GPU thermal throttling using monitoring software</li>
+                    <li>Reapplied thermal paste on components with degraded cooling performance</li>
+                    <li>Reconfigured case fan layout and curves to improve airflow</li>
+                    <li>Cleared dust buildup from heatsinks, radiators, and intake filters</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <h4>Performance Degradation</h4>
-                <p>Diagnosed and fixed systems experiencing unexpected slowdowns and crashes.</p>
+                <div class="context-tag">Friends and Family</div>
+                <h4>Performance Degradation and Crashes</h4>
+                <p>Diagnosed systems experiencing unexpected slowdowns, stuttering, and random crashes, tracing issues back to hardware rather than software where applicable.</p>
                 <ul>
-                    <li>Identified failing hard drives causing system stuttering</li>
-                    <li>Resolved RAM issues causing random crashes</li>
-                    <li>Fixed driver conflicts affecting GPU performance</li>
-                    <li>Diagnosed power delivery issues from inadequate PSUs</li>
+                    <li>Identified failing storage drives causing system stuttering using CrystalDiskInfo</li>
+                    <li>Isolated RAM instability causing random crashes through MemTest86</li>
+                    <li>Resolved driver conflicts affecting GPU performance and stability</li>
+                    <li>Diagnosed underpowered PSUs causing instability under load</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <h4>Component Upgrades & Compatibility</h4>
-                <p>Helped clients upgrade systems while ensuring compatibility and optimal performance.</p>
+                <div class="context-tag">Baqir CPA Server</div>
+                <h4>Server Hardware and Configuration</h4>
+                <p>Supported the Windows Server 2022 Datacenter build at Baqir CPA through initial setup and post-build configuration, ensuring the system was stable and running correctly for office use.</p>
                 <ul>
-                    <li>Verified PSU wattage for new GPU installations</li>
-                    <li>Confirmed RAM compatibility with existing motherboards</li>
-                    <li>Checked physical clearance for larger coolers/GPUs</li>
-                    <li>Ensured BIOS support for new CPUs</li>
+                    <li>Verified Gen 5 NVMe drive recognition and performance in BIOS and Windows Server</li>
+                    <li>Confirmed correct RAM configuration and XMP profile on a 128GB DDR5 install</li>
+                    <li>Checked driver and firmware compatibility for server components post-install</li>
+                    <li>Monitored system stability during initial burn-in period after setup</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="context-tag">Personal and Family Systems</div>
+                <h4>Component Upgrades and Compatibility</h4>
+                <p>Helped family members and friends plan and execute hardware upgrades, verifying compatibility before any purchases were made.</p>
+                <ul>
+                    <li>Verified PSU wattage headroom before new GPU installations</li>
+                    <li>Confirmed RAM compatibility with existing motherboards and BIOS versions</li>
+                    <li>Checked physical clearance for larger coolers and GPUs in existing cases</li>
+                    <li>Ensured BIOS support for CPU upgrades on older motherboards</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>Troubleshooting Approach</h2>
-            <h3>My Diagnostic Process</h3>
+            <h2>My Diagnostic Process</h2>
+            <p style="line-height: 1.8; margin-bottom: 10px;">Every troubleshooting job follows the same general approach regardless of the system or symptom.</p>
             <ul>
-                <li><strong>Gather Information:</strong> Understanding the problem symptoms and when they occur</li>
-                <li><strong>Isolate Variables:</strong> Testing components individually to narrow down the issue</li>
-                <li><strong>Check the Basics:</strong> Verifying connections, power, and obvious physical issues</li>
-                <li><strong>Systematic Testing:</strong> Using process of elimination to identify faulty components</li>
-                <li><strong>Verify the Fix:</strong> Stress testing and monitoring to ensure the problem is resolved</li>
+                <li><strong>Understand the symptom:</strong> When does it happen, how often, and what changed recently</li>
+                <li><strong>Check the obvious first:</strong> Connections, seating, power, and any visible physical issues</li>
+                <li><strong>Isolate variables:</strong> Test components individually to narrow down the source</li>
+                <li><strong>Use diagnostic tools:</strong> MemTest86, CrystalDiskInfo, HWiNFO, Prime95, FurMark, and Event Viewer</li>
+                <li><strong>Verify the fix:</strong> Stress test and monitor after the change to confirm the issue is fully resolved</li>
             </ul>
         </section>
 
@@ -249,30 +137,31 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <h4>Component Testing</h4>
-                    <p>Testing RAM, CPUs, GPUs, PSUs, and storage drives to identify failures.</p>
+                    <p>Testing RAM, CPUs, GPUs, PSUs, and storage drives to identify failures and marginal components.</p>
                 </div>
                 <div class="skill-item">
                     <h4>Thermal Analysis</h4>
-                    <p>Using monitoring software to identify overheating issues and improve cooling.</p>
+                    <p>Using HWiNFO and other monitoring tools to identify overheating, throttling, and cooling inefficiencies.</p>
                 </div>
                 <div class="skill-item">
-                    <h4>Power Issues</h4>
-                    <p>Diagnosing PSU failures, power delivery problems, and voltage irregularities.</p>
+                    <h4>Power Diagnosis</h4>
+                    <p>Diagnosing PSU failures, inadequate wattage, and power delivery problems under load.</p>
                 </div>
                 <div class="skill-item">
-                    <h4>Hardware Testing Tools</h4>
-                    <p>Using MemTest86, Prime95, FurMark, CrystalDiskInfo, and other diagnostic tools.</p>
+                    <h4>Diagnostic Tools</h4>
+                    <p>MemTest86, Prime95, FurMark, CrystalDiskInfo, HWiNFO, and Windows Event Viewer.</p>
                 </div>
                 <div class="skill-item">
                     <h4>Physical Inspection</h4>
-                    <p>Identifying physical damage, loose connections, and worn components.</p>
+                    <p>Identifying physical damage, loose connections, improper seating, and worn or failed components.</p>
                 </div>
                 <div class="skill-item">
-                    <h4>Driver & Firmware</h4>
-                    <p>Resolving issues caused by outdated or incompatible drivers and BIOS versions.</p>
+                    <h4>Driver and Firmware</h4>
+                    <p>Resolving instability caused by outdated drivers, missing updates, and incompatible BIOS versions.</p>
                 </div>
             </div>
         </section>
+
     </div>
 
     <footer>

@@ -5,320 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography & Videography - Turaab Ali</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
+        header p { font-size: 1.1em; opacity: 0.95; animation: fadeInUp 1s ease; }
+        nav { background: white; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; text-align: center; }
+        nav a { color: #764ba2; text-decoration: none; margin: 0 20px; padding: 10px 15px; font-weight: 600; transition: all 0.3s; border-radius: 5px; }
+        nav a:hover { background: #764ba2; color: white; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: white; margin: 30px 0; padding: 50px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: fadeIn 1s ease; }
+        h2 { color: #764ba2; font-size: 2.2em; margin-bottom: 30px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
+        h3 { color: #764ba2; font-size: 1.5em; margin: 25px 0 15px 0; }
+        .experience-item { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; margin-bottom: 20px; }
+        .experience-item h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.3em; }
+        ul { margin-left: 20px; margin-top: 15px; }
+        ul li { margin-bottom: 10px; line-height: 1.7; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .skill-card { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; }
+        .skill-card h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.2em; }
+
+        /* Photo gallery */
+        .photo-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 24px; }
+        .photo-card { border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.12); transition: transform 0.3s; }
+        .photo-card:hover { transform: scale(1.02); }
+        .photo-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+        .photo-caption { padding: 14px 16px; background: #f9f9f9; }
+        .photo-caption strong { color: #764ba2; display: block; font-size: 0.95em; margin-bottom: 2px; }
+        .photo-caption span { font-size: 0.85em; color: #666; }
+        .photo-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        object-position: center 60%; /* move the image up */
+        display: block;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s ease;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-            text-align: center;
-        }
-
-        nav a {
-            color: #764ba2;
-            text-decoration: none;
-            margin: 0 20px;
-            padding: 10px 15px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #764ba2;
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease;
-        }
-
-        h2 {
-            color: #764ba2;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #764ba2;
-            padding-bottom: 10px;
-        }
-
-        .experience-item {
-            background: #764ba215;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-            margin-bottom: 20px;
-        }
-
-        .experience-item h4 {
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-top: 15px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .skill-card {
-            background: #764ba215;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-        }
-
-        .skill-card h4 {
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 30px 20px; }
-            nav a { display: block; margin: 10px 0; }
-        }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { section { padding: 30px 20px; } nav a { display: block; margin: 10px 0; } .photo-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <header>
         <h1>Photography & Videography</h1>
+        <p>Event photography, videography, and post-production for Ismaili iComms</p>
     </header>
 
     <nav>
-      <a href="/">Home</a>
-      <a href="/pc-building/">Pc Building</a>
-      <a href="/problem-solving/">Problem Solving</a>
-      <a href="/robotics/">Robotics</a>
-      <a href="/technical/">Technical</a>
-      <a href="/troubleshooting/">Troubleshooting</a>
-      <a href="/photo-video/">Photography & Videography</a>
-      <a href="/contact-me/">Contact Me</a>
+        <a href="/">Home</a>
+        <a href="/pc-building/">PC Building</a>
+        <a href="/problem-solving/">Problem Solving</a>
+        <a href="/robotics/">Robotics</a>
+        <a href="/technical/">Technical</a>
+        <a href="/troubleshooting/">Troubleshooting</a>
+        <a href="/photo-video/">Photography & Videography</a>
+        <a href="/contact-me/">Contact Me</a>
     </nav>
 
     <div class="container">
+
         <section>
             <h2>About This Skill</h2>
-            <p style="font-size: 1.1em; line-height: 1.8;">
-                I believe that technical expertise must be paired with artistic vision and genuine understanding of the client's story. 
-                My approach to Photography & Videography focuses on capturing authentic moments, understanding what clients want to convey, 
-                and delivering visual content that exceeds expectations.
-            </p>
+            <p style="font-size: 1.1em; line-height: 1.8;">I volunteer with the Ismaili IComms team, the institutional communications team responsible for photography, videography, and social media content for the Ismaili community. I have shot and edited content for a range of events including community dinners, fundraisers, religious ceremonies, Dandiya celebrations, and other community gatherings. My role covers everything from shooting on location to post-production editing for final delivery.</p>
         </section>
 
         <section>
-            <h2>My Equipment & Setup</h2>
-            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
-                As a high school student passionate about videography, I've built a professional-grade setup 
-                for my work with the Ismaili Communications team (IComms). While I'm not currently seeking paid work, 
-                I'm actively developing my skills and expanding my portfolio.
-            </p>
-            
+            <h2>IComms Experience</h2>
             <div class="experience-item">
-                <h4>Camera & Recording Equipment</h4>
+                <h4>Event Photography and Videography</h4>
+                <p>Shot photo and video content across a range of community events for the Ismaili IComms team, producing content used on official social media channels and internal communications.</p>
                 <ul>
-                    <li><strong>Nikon Z7</strong> - Professional full-frame mirrorless camera</li>
-                    <li><strong>Nikkor 24-70mm lens</strong> - Versatile zoom for various shooting scenarios</li>
-                    <li><strong>3 batteries + charger</strong> - Extended shooting capability</li>
-                    <li><strong>DJI RS4 Mini</strong> - Gimbal stabilizer for smooth video footage</li>
-                    <li><strong>DJI Mic Minis</strong> - Wireless microphone system for professional audio</li>
-                    <li><strong>Flash unit</strong> - Additional lighting options</li>
-                    <li><strong>IEMs</strong> - For monitoring audio during recording</li>
+                    <li>Community dinners and fundraising events</li>
+                    <li>Religious ceremonies and observances</li>
+                    <li>Dandiya and cultural celebration events</li>
+                    <li>General community gatherings and programs</li>
                 </ul>
             </div>
+            <div class="experience-item">
+                <h4>Video Editing and Post-Production</h4>
+                <p>Edited event footage and photos for final delivery, handling color grading, cuts, and export for social media formats using Adobe Premiere Pro and Lightroom.</p>
+                <ul>
+                    <li>Color grading and exposure correction in Adobe Lightroom and Premiere Pro</li>
+                    <li>Cutting and sequencing event footage for social media posts</li>
+                    <li>Exporting in formats optimized for Instagram, YouTube, and internal use</li>
+                    <li>Organizing and managing raw files across a multi-drive storage setup</li>
+                </ul>
+            </div>
+        </section>
 
+        <section>
+            <h2>Sample Work</h2>
+            <p style="margin-bottom: 8px; line-height: 1.8;">Two samples from my personal photography. The sunset shot is unedited straight from the Nikon Z7. The butterfly shot shows my editing approach in Lightroom, using selective exposure and contrast adjustments to isolate the subject against a dark background.</p>
+            <div class="photo-gallery">
+                <div class="photo-card">
+                    <img src="trees.JPG" alt="Sunset silhouette shot, unedited, Nikon Z7">
+                    <div class="photo-caption">
+                        <strong>Sunset Silhouette</strong>
+                        <span>RAW, unedited-Nikon Z7</span>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="IMG_2438.jpeg" alt="Monarch butterfly on yellow flowers, edited">
+                    <div class="photo-caption">
+                        <strong>Monarch on Yellow Flowers</strong>
+                        <span>Edited-Adobe Lightroom</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Equipment</h2>
+            <div class="experience-item">
+                <h4>Camera and Recording</h4>
+                <ul>
+                  <li><strong>Nikon Z7</strong> - Full-frame mirrorless camera, primary shooting body</li>
+                <li><strong>Nikkor 24-70mm f/4 S</strong> - Versatile zoom lens for events and general shooting</li>
+                <li><strong>DJI RS4 Mini</strong> - Gimbal stabilizer for smooth handheld video</li>
+                <li><strong>DJI Mic Mini</strong> - Wireless microphone system for clean audio capture</li>
+                <li><strong>Flash unit</strong> - Supplemental lighting for indoor events</li>
+                <li><strong>3 batteries and charger</strong> - Extended shooting capacity for full-day events</li>
+                <li><strong>IEMs</strong> - In-ear monitors for real-time audio monitoring during recording</li>
+                </ul>
+            </div>
             <div class="experience-item">
                 <h4>Editing Workstation</h4>
-                <p><strong>Custom-built PC optimized for video editing and photography:</strong></p>
+                <p>Editing is done on my custom-built PC, the same machine listed on the PC Building page, with specs chosen in part for video rendering and Lightroom performance.</p>
                 <ul>
-                    <li><strong>AMD Radeon RX 9070 XT</strong> - High-performance GPU for rendering</li>
-                    <li><strong>AMD Ryzen 7 9700X</strong> - Powerful 8-core processor</li>
-                    <li><strong>32GB DDR5-6000</strong> - Fast memory for smooth editing</li>
-                    <li><strong>1TB NVMe SSD</strong> - Primary drive for OS and applications</li>
-                    <li><strong>3x 1TB SATA SSDs</strong> - Fast project storage</li>
-                    <li><strong>1x 4TB HDD</strong> - Additional media storage</li>
+                    <li><strong>AMD Ryzen 7 9700X</strong> - 8-core processor for fast export and rendering</li>
+<li><strong>AMD Radeon RX 9070 XT</strong> - GPU-accelerated rendering in Premiere Pro</li>
+<li><strong>32GB DDR5 6000MHz</strong> - Smooth performance with large project files</li>
+<li><strong>1TB Gen 4 NVMe</strong> - OS and active project storage</li>
+<li><strong>3x 1TB SATA SSD + 4TB HDD</strong> - Media library and archive storage</li>
                 </ul>
             </div>
-
             <div class="experience-item">
-                <h4>Storage & Backup</h4>
+                <h4>Storage and Backup</h4>
                 <ul>
-                    <li><strong>NAS System</strong> - Network-attached storage for file management</li>
-                    <li><strong>2x 500GB drives in RAID 1 (mirror)</strong> - Redundant storage for important files</li>
-                    <li><strong>1.5TB available storage</strong> - Room for ongoing projects</li>
+                 <li><strong>NAS system</strong> - Network-attached storage for file management and access</li>
+                <li><strong>2x 500GB drives in RAID 1</strong> - Mirrored redundancy for important project files</li>
+                <li><strong>1.5TB available NAS storage</strong> - Ongoing project capacity</li>
                 </ul>
             </div>
-
             <div class="experience-item">
-                <h4>Software Suite</h4>
+                <h4>Software</h4>
                 <ul>
-                    <li><strong>Adobe Premiere Pro</strong> - Professional video editing</li>
-                    <li><strong>Adobe Lightroom</strong> - Photo editing and color grading</li>
-                    <li><strong>Adobe Photoshop</strong> - Advanced image manipulation</li>
+                    <li><strong>Adobe Premiere Pro</strong> - Primary video editing and export</li>
+<li><strong>Adobe Lightroom</strong> - Photo editing and color grading</li>
+<li><strong>Adobe Photoshop</strong> - Advanced image compositing and retouching</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>Photography & Videography Experience</h2>
-            
-            <div class="experience-item">
-                <h4>Understanding Client Vision</h4>
-                <p>Taking time to learn what clients want to communicate through their visual content.</p>
-                <ul>
-                    <li>Discussing the purpose and audience for photos/videos</li>
-                    <li>Understanding aesthetic preferences and style</li>
-                    <li>Exploring mood boards and visual references</li>
-                    <li>Identifying the story or message to convey</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Clear Creative Communication</h4>
-                <p>Explaining technical and creative concepts in accessible terms.</p>
-                <ul>
-                    <li>Discussing lighting, composition, and framing choices</li>
-                    <li>Explaining equipment capabilities and limitations</li>
-                    <li>Providing examples of different shooting styles</li>
-                    <li>Guiding clients through the creative process</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Setting Realistic Expectations</h4>
-                <p>Being honest about what's achievable within budget and timeline.</p>
-                <ul>
-                    <li>Providing accurate timelines for shooting and editing</li>
-                    <li>Explaining deliverable formats and usage rights</li>
-                    <li>Being upfront about weather/location challenges</li>
-                    <li>Following through on promised deliverables</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Post-Production Excellence</h4>
-                <p>Ensuring client satisfaction through the editing process.</p>
-                <ul>
-                    <li>Providing previews and seeking feedback</li>
-                    <li>Making revisions based on client input</li>
-                    <li>Delivering files in requested formats</li>
-                    <li>Being available for questions about final products</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Communication Skills</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h4>Active Listening</h4>
-                    <p>Understanding the client's vision and what they hope to achieve with the final product.</p>
+                    <h4>Camera Operation</h4>
+                    <p>Manual exposure control, composition, and shooting in varied indoor and outdoor lighting conditions.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Patience</h4>
-                    <p>Taking time to ensure clients feel comfortable and confident during shoots.</p>
+                    <h4>Gimbal Operation</h4>
+                    <p>Smooth handheld video using the DJI RS4 Mini for event coverage and cinematic movement.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Transparency</h4>
-                    <p>Being honest about costs, timelines, and creative possibilities.</p>
+                    <h4>Audio Capture</h4>
+                    <p>Wireless mic setup and real-time monitoring with IEMs to ensure clean audio on location.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Adaptability</h4>
-                    <p>Adjusting shooting style and approach based on client comfort and project needs.</p>
+                    <h4>Color Grading</h4>
+                    <p>Exposure correction, color grading, and selective adjustments in Adobe Lightroom and Premiere Pro.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Problem Resolution</h4>
-                    <p>Addressing concerns quickly and finding creative solutions that satisfy the client.</p>
+                    <h4>Video Editing</h4>
+                    <p>Cutting, sequencing, and exporting event footage for social media and internal delivery.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Professionalism</h4>
-                    <p>Maintaining a respectful, reliable, and courteous approach in all interactions.</p>
+                    <h4>File Management</h4>
+                    <p>Organizing raw files, managing storage across multiple drives, and maintaining backups via NAS with RAID 1.</p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>My Photography & Videography Philosophy</h2>
-            <ul>
-                <li><strong>Clients' vision comes first:</strong> Their story and satisfaction are the top priority</li>
-                <li><strong>Authenticity over perfection:</strong> Capturing genuine moments that resonate</li>
-                <li><strong>Long-term relationships:</strong> Building trust leads to repeat clients and referrals</li>
-                <li><strong>Quality over quantity:</strong> Taking the time to get the shot right</li>
-                <li><strong>Continuous improvement:</strong> Learning from each project to refine my craft</li>
-            </ul>
-        </section>
     </div>
 
     <footer>

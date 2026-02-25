@@ -5,258 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Building - Turaab Ali</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s ease;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-            text-align: center;
-        }
-
-        nav a {
-            color: #764ba2;
-            text-decoration: none;
-            margin: 0 20px;
-            padding: 10px 15px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #764ba2;
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease;
-        }
-
-        h2 {
-            color: #764ba2;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #764ba2;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #764ba2;
-            font-size: 1.5em;
-            margin: 25px 0 15px 0;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .image-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .image-card:hover {
-            transform: scale(1.03);
-        }
-
-        .placeholder-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #764ba215 0%, #764ba215 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 1.2em;
-        }
-
-        .image-card .caption {
-            padding: 15px;
-            background: #f9f9f9;
-            text-align: center;
-            font-weight: 600;
-            color: #764ba2;
-        }
-
-        .experience-item {
-            background: #764ba215;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-            margin-bottom: 20px;
-        }
-
-        .experience-item h4 {
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-top: 15px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 30px 20px; }
-            nav a { display: block; margin: 10px 0; }
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
+        header p { font-size: 1.1em; opacity: 0.95; animation: fadeInUp 1s ease; }
+        nav { background: white; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; text-align: center; }
+        nav a { color: #764ba2; text-decoration: none; margin: 0 20px; padding: 10px 15px; font-weight: 600; transition: all 0.3s; border-radius: 5px; }
+        nav a:hover { background: #764ba2; color: white; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: white; margin: 30px 0; padding: 50px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: fadeIn 1s ease; }
+        h2 { color: #764ba2; font-size: 2.2em; margin-bottom: 30px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
+        h3 { color: #764ba2; font-size: 1.5em; margin: 25px 0 15px 0; }
+        .image-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 30px; }
+        .image-card { border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .image-card:hover { transform: scale(1.03); }
+        .image-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .image-card .caption { padding: 15px; background: #f9f9f9; text-align: center; font-weight: 600; color: #764ba2; }
+        .experience-item { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; margin-bottom: 20px; }
+        .experience-item h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.3em; }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-top: 20px; }
+        .spec-item { background: #764ba215; border-left: 4px solid #764ba2; border-radius: 8px; padding: 16px 20px; }
+        .spec-label { font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.07em; color: #764ba2; font-weight: 700; margin-bottom: 4px; }
+        .spec-value { font-size: 1em; font-weight: 600; color: #333; }
+        ul { margin-left: 20px; margin-top: 15px; }
+        ul li { margin-bottom: 10px; line-height: 1.7; }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { section { padding: 30px 20px; } nav a { display: block; margin: 10px 0; } .image-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <header>
         <h1>PC Building</h1>
+        <p>Custom builds for personal use and family members</p>
     </header>
-
     <nav>
-      <a href="/">Home</a>
-      <a href="/pc-building/">Pc Building</a>
-      <a href="/problem-solving/">Problem Solving</a>
-      <a href="/robotics/">Robotics</a>
-      <a href="/technical/">Technical</a>
-      <a href="/troubleshooting/">Troubleshooting</a>
-      <a href="/photo-video/">Photography & Videography</a>
-      <a href="/contact-me/">Contact Me</a>
+        <a href="/">Home</a>
+        <a href="/pc-building/">PC Building</a>
+        <a href="/problem-solving/">Problem Solving</a>
+        <a href="/robotics/">Robotics</a>
+        <a href="/technical/">Technical</a>
+        <a href="/troubleshooting/">Troubleshooting</a>
+        <a href="/photo-video/">Photography & Videography</a>
+        <a href="/contact-me/">Contact Me</a>
     </nav>
-
     <div class="container">
+
         <section>
             <h2>About This Skill</h2>
-            <p style="font-size: 1.1em; line-height: 1.8;">
-                I specialize in building custom PCs from the ground up, carefully selecting components to match specific needs and budgets. 
-                My approach combines technical knowledge with attention to detail, ensuring every build is optimized for performance, 
-                aesthetics, and reliability.
-            </p>
+            <p style="font-size: 1.1em; line-height: 1.8;">I build custom PCs from the ground up, handling everything from component research and selection to full assembly, cable management, BIOS configuration, and post-build testing. My builds have been for personal use and family members, ranging from everyday setups to high-end gaming machines. I focus on choosing parts that work well together, keeping thermals under control, and making sure every build is reliable long-term.</p>
         </section>
 
         <section>
-            <h2>Experience & Projects</h2>
-            
+            <h2>Build 1: High-End AMD Gaming PC</h2>
+            <p style="line-height: 1.8; margin-bottom: 24px;">A high-end AMD gaming PC built for demanding games and heavy workloads at high settings. Every component was researched and selected for compatibility, performance, and value. Total build cost: <strong>$1,638</strong>.</p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">CPU</div>
+                    <div class="spec-value">AMD Ryzen 7 9700X</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">GPU</div>
+                    <div class="spec-value">AMD Radeon RX 9070 XT</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">RAM</div>
+                    <div class="spec-value">32GB DDR5 6000MHz</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Motherboard</div>
+                    <div class="spec-value">Gigabyte B650 Gaming X AX V2</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Primary Storage</div>
+                    <div class="spec-value">1TB Gen 4 NVMe SSD</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Secondary Storage</div>
+                    <div class="spec-value">3x 1TB SATA SSD + 4TB HDD</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Cooling</div>
+                    <div class="spec-value">Montech 360mm ARGB AIO</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">PSU</div>
+                    <div class="spec-value">MSI MAG 850W</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Case</div>
+                    <div class="spec-value">Lian Li Lancool 217</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Build 2: Windows Server 2022 for Baqir CPA</h2>
+            <p style="line-height: 1.8; margin-bottom: 24px;">A professional Windows Server 2022 Datacenter build assembled for my dad's accounting office, Baqir CPA. This machine handles office workloads, file serving, and business operations. Total build cost: <strong>$4,300</strong>.</p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">CPU</div>
+                    <div class="spec-value">AMD Ryzen 9 9950X3D</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">RAM</div>
+                    <div class="spec-value">128GB DDR5</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Motherboard</div>
+                    <div class="spec-value">MSI X870</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Storage</div>
+                    <div class="spec-value">2x 2TB Gen 5 NVMe SSD</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">PSU</div>
+                    <div class="spec-value">Corsair 850W</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Case</div>
+                    <div class="spec-value">ASUS A31 Plus</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Operating System</div>
+                    <div class="spec-value">Windows Server 2022 Datacenter</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience and Projects</h2>
             <div class="experience-item">
-                <h4>Custom Gaming PC Builds</h4>
-                <p>Built multiple high-performance gaming PCs for clients and personal use, focusing on maximizing FPS and ensuring thermal efficiency.</p>
+                <h4>High-End Gaming PC (Personal)</h4>
+                <p>Researched, sourced, and assembled a $1,638 AMD gaming build from scratch. Handled full component compatibility checks, physical assembly, BIOS configuration, and post-build stability testing.</p>
                 <ul>
-                    <li>Component selection within various budget ranges ($500 - $2000+)</li>
-                    <li>Performance benchmarking and optimization</li>
-                    <li>Custom RGB lighting configurations</li>
-                    <li>Professional cable management for airflow and aesthetics</li>
+                    <li>Verified compatibility across CPU, motherboard, RAM, and cooler before purchasing</li>
+                    <li>Installed a 360mm AIO with correct AM5 bracket mounting and thermal paste application</li>
+                    <li>Enabled EXPO profile in BIOS to achieve rated 6000MHz DDR5 speed</li>
+                    <li>Configured a 5-drive storage layout across Gen 4 NVMe, 3 SATA SSDs, and a 4TB HDD</li>
+                    <li>Ran benchmarks and stress tests after build to confirm thermal and system stability</li>
                 </ul>
             </div>
-
             <div class="experience-item">
-                <h4>Productivity Workstations</h4>
-                <p>Assembled workstation PCs optimized for content creation, programming, and multi-tasking workflows.</p>
+                <h4>Windows Server 2022 Build for Baqir CPA</h4>
+                <p>Built a $4,300 professional server for Baqir CPA, my dad's accounting firm that serves multinational organizations. The machine runs Windows Server 2022 Datacenter and handles office workloads, file management, and business operations. This was my first server build and required learning Windows Server setup and configuration.</p>
                 <ul>
-                    <li>Multi-core CPU configurations for parallel processing</li>
-                    <li>High-capacity RAM and storage solutions</li>
-                    <li>Quiet cooling solutions for office environments</li>
+                    <li>Selected high-core-count and high-memory components suited for server workloads</li>
+                    <li>Installed and configured Windows Server 2022 Datacenter edition</li>
+                    <li>Set up dual Gen 5 NVMe drives for fast storage and redundancy</li>
+                    <li>Configured the system for professional office use at Baqir CPA</li>
                 </ul>
             </div>
-
             <div class="experience-item">
-                <h4>Budget-Friendly Builds</h4>
-                <p>Created cost-effective PC builds that deliver solid performance without breaking the bank.</p>
+                <h4>Storage Configuration</h4>
+                <p>Experienced in setting up multi-drive storage systems across both consumer and server builds, using NVMe for the OS and primary applications, SATA SSDs for secondary storage, and HDDs for bulk data.</p>
                 <ul>
-                    <li>Finding best value-for-money components</li>
-                    <li>Balancing performance and budget constraints</li>
-                    <li>Planning upgrade paths for future improvements</li>
+                    <li>Drive partitioning and formatting for clean Windows and Windows Server installs</li>
+                    <li>Organizing storage across multiple drives for performance and capacity</li>
+                    <li>Understanding read and write speed differences between Gen 4 NVMe, Gen 5 NVMe, SATA SSD, and HDD</li>
                 </ul>
             </div>
         </section>
 
         <section>
             <h2>Build Gallery</h2>
-            <p style="margin-bottom: 20px;">Some of my recent PC builds:</p>
-            
+            <p style="margin-bottom: 20px;">Photos from my recent builds:</p>
             <div class="image-gallery">
                 <div class="image-card">
-                    <div class="placeholder-image">Add PC Build Image 1</div>
+                    <img src="PC SETUP.jpg" alt="Gaming PC Build">
                     <div class="caption">Gaming PC Build</div>
                 </div>
                 <div class="image-card">
-                    <div class="placeholder-image">Add PC Build Image 2</div>
+                    <img src="Wire managment.jpg" alt="Cable Management">
                     <div class="caption">Cable Management</div>
-                </div>
-                <div class="image-card">
-                    <div class="placeholder-image">Add PC Build Image 3</div>
-                    <div class="caption">RGB Setup</div>
-                </div>
-                <div class="image-card">
-                    <div class="placeholder-image">Add PC Build Image 4</div>
-                    <div class="caption">Compact Build</div>
                 </div>
             </div>
         </section>
@@ -265,36 +190,32 @@
             <h2>Technical Skills</h2>
             <h3>Component Knowledge</h3>
             <ul>
-                <li>Understanding CPU architectures (Intel & AMD)</li>
-                <li>GPU selection for gaming, rendering, and productivity</li>
-                <li>Motherboard chipset compatibility and features</li>
-                <li>RAM speed, timings, and capacity optimization</li>
-                <li>Storage solutions (NVMe, SATA SSD, HDD)</li>
+                <li>CPU architecture differences between Intel and AMD product lines</li>
+                <li>GPU selection for gaming and productivity workloads</li>
+                <li>Motherboard chipset compatibility, VRM quality, and feature sets</li>
+                <li>RAM speed, timings, and XMP/EXPO profile configuration</li>
+                <li>Storage solutions including NVMe Gen 4, SATA SSD, and HDD</li>
                 <li>PSU wattage calculations and efficiency ratings</li>
-                <li>Case selection for airflow and form factor</li>
+                <li>Case airflow design and fan placement for optimal thermal performance</li>
             </ul>
-
-            <h3>Assembly & Installation</h3>
+            <h3>Assembly and Installation</h3>
             <ul>
-                <li>Proper CPU and cooler installation</li>
-                <li>Motherboard mounting and standoff placement</li>
-                <li>GPU installation and PCIe slot management</li>
-                <li>Cable routing and management techniques</li>
-                <li>Fan configuration for optimal airflow</li>
+                <li>CPU and AIO cooler installation including proper thermal paste application</li>
+                <li>Motherboard mounting with correct standoff placement</li>
+                <li>GPU installation and PCIe slot selection</li>
+                <li>Cable routing and management for clean builds with good airflow</li>
+                <li>Fan configuration and ARGB header management</li>
             </ul>
-
-            <h3>Software & Configuration</h3>
+            <h3>Software and Configuration</h3>
             <ul>
-                <li>BIOS setup and configuration</li>
-                <li>Operating system installation (Windows, Linux)</li>
-                <li>Driver installation and updates</li>
-                <li>System stability testing and benchmarking</li>
+                <li>BIOS setup including XMP/EXPO enabling and boot order configuration</li>
+                <li>Windows and Linux operating system installation</li>
+                <li>Driver installation and update management</li>
+                <li>System stability testing and benchmarking with tools like Cinebench and 3DMark</li>
             </ul>
         </section>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
-    </footer>
+    </div>
+    <footer><p>&copy; 2026 Turaab Ali. All rights reserved.</p></footer>
 </body>
 </html>

@@ -5,267 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics - Turaab Ali</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s ease;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-            text-align: center;
-        }
-
-        nav a {
-            color: #764ba2;
-            text-decoration: none;
-            margin: 0 20px;
-            padding: 10px 15px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #764ba2;
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease;
-        }
-
-        h2 {
-            color: #764ba2;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #764ba2;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #764ba2;
-            font-size: 1.5em;
-            margin: 25px 0 15px 0;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .image-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .image-card:hover {
-            transform: scale(1.03);
-        }
-
-        .placeholder-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #764ba215 0%, #764ba215 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 1.2em;
-        }
-
-        .image-card .caption {
-            padding: 15px;
-            background: #f9f9f9;
-            text-align: center;
-            font-weight: 600;
-            color: #764ba2;
-        }
-
-        .experience-item {
-            background: #764ba215;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-            margin-bottom: 20px;
-        }
-
-        .experience-item h4 {
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-top: 15px;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        .external-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #764ba2;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 12px 30px;
-            border: 2px solid #764ba2;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-
-        .external-link:hover {
-            background: #764ba2;
-            color: white;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 30px 20px; }
-            nav a { display: block; margin: 10px 0; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
+        header p { font-size: 1.1em; opacity: 0.95; animation: fadeInUp 1s ease; }
+        nav { background: white; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; text-align: center; }
+        nav a { color: #764ba2; text-decoration: none; margin: 0 20px; padding: 10px 15px; font-weight: 600; transition: all 0.3s; border-radius: 5px; }
+        nav a:hover { background: #764ba2; color: white; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: white; margin: 30px 0; padding: 50px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: fadeIn 1s ease; }
+        h2 { color: #764ba2; font-size: 2.2em; margin-bottom: 30px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
+        h3 { color: #764ba2; font-size: 1.5em; margin: 25px 0 15px 0; }
+        .experience-item { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; margin-bottom: 20px; }
+        .experience-item h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.3em; }
+        ul { margin-left: 20px; margin-top: 15px; }
+        ul li { margin-bottom: 10px; line-height: 1.7; }
+        .stats-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 28px 0 10px; }
+        .stat-box { background: #764ba215; border-left: 4px solid #764ba2; border-radius: 8px; padding: 18px 24px; flex: 1; min-width: 140px; }
+        .stat-box .num { font-size: 1.9em; font-weight: 700; color: #764ba2; }
+        .stat-box .label { font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.07em; color: #666; margin-top: 2px; }
+        .match-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95em; }
+        .match-table th { background: #764ba2; color: white; padding: 10px 14px; text-align: left; font-weight: 600; }
+        .match-table td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+        .match-table tr:last-child td { border-bottom: none; }
+        .match-table tr:nth-child(even) { background: #faf9ff; }
+        .win { color: #16a34a; font-weight: 700; }
+        .team-highlight { font-weight: 700; color: #764ba2; }
+        .role-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+        .badge { background: #764ba2; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; font-weight: 600; }
+        .external-link { display: inline-block; margin-top: 20px; color: #764ba2; font-weight: 600; text-decoration: none; padding: 12px 30px; border: 2px solid #764ba2; border-radius: 25px; transition: all 0.3s; }
+        .external-link:hover { background: #764ba2; color: white; }
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .image-card { border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .image-card:hover { transform: scale(1.03); }
+        .image-card img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-card .caption { padding: 15px; background: #f9f9f9; text-align: center; font-weight: 600; color: #764ba2; }
+        .placeholder-image { width: 100%; height: 250px; background: #764ba215; display: flex; align-items: center; justify-content: center; color: #999; font-size: 1.1em; }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { section { padding: 30px 20px; } nav a { display: block; margin: 10px 0; } .stats-row { flex-direction: column; } }
     </style>
 </head>
 <body>
     <header>
         <h1>Robotics (FTC)</h1>
+        <p>Team 26147 Nano Knights | Team Captain, Builder, Driver</p>
     </header>
 
     <nav>
-      <a href="/">Home</a>
-      <a href="/pc-building/">Pc Building</a>
-      <a href="/problem-solving/">Problem Solving</a>
-      <a href="/robotics/">Robotics</a>
-      <a href="/technical/">Technical</a>
-      <a href="/troubleshooting/">Troubleshooting</a>
-      <a href="/photo-video/">Photography & Videography</a>
-      <a href="/contact-me/">Contact Me</a>
+        <a href="/">Home</a>
+        <a href="/pc-building/">PC Building</a>
+        <a href="/problem-solving/">Problem Solving</a>
+        <a href="/robotics/">Robotics</a>
+        <a href="/technical/">Technical</a>
+        <a href="/troubleshooting/">Troubleshooting</a>
+        <a href="/photo-video/">Photography & Videography</a>
+        <a href="/contact-me/">Contact Me</a>
     </nav>
 
     <div class="container">
+
         <section>
             <h2>About This Skill</h2>
-            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
-                As an active member of my FIRST Tech Challenge (FTC) team, I work on all aspects of robot design, programming, 
-                and competition strategy. FTC has taught me to think critically under pressure, collaborate effectively with teammates, 
-                and approach complex engineering challenges with creativity and precision.
-            </p>
-            <a href="https://nanoknightsftc.com/" target="_blank" class="external-link">Visit Team Website →</a>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 16px;">I am a founding member and team captain of Nano Knights FTC Team 26147, a second-year FIRST Tech Challenge team based in Sugar Land, TX. Across two seasons I have served as the team's lead builder, driver, and captain, responsible for mechanical design decisions, competition driving, and keeping the team organized throughout the full season. FTC has pushed me to work under pressure, make fast decisions, and lead a team through both preparation and live competition.</p>
+            <div class="role-badges">
+                <span class="badge">Team Captain</span>
+                <span class="badge">Lead Builder</span>
+                <span class="badge">Driver</span>
+                <span class="badge">2 Seasons</span>
+            </div>
+            <a href="https://nanoknightsftc.com/" target="_blank" class="external-link">Visit Team Website</a>
         </section>
 
         <section>
-            <h2>Experience & Competition History</h2>
-            
-            <div class="experience-item">
-                <h4>Robot Design & Assembly</h4>
-                <p>Hands-on experience designing and building competition-ready robots from scratch.</p>
-                <ul>
-                    <li>Mechanical design for game-specific challenges</li>
-                    <li>Selecting motors, servos, and sensors for optimal performance</li>
-                    <li>Building robust mechanisms that withstand competition stress</li>
-                    <li>Iterative prototyping and testing to improve designs</li>
-                    <li>Weight distribution and center of gravity optimization</li>
-                </ul>
+            <h2>Goddard Tournament Results</h2>
+            <p style="line-height: 1.8; margin-bottom: 8px;">Competed at the Goddard Tournament on February 7, 2026 at James Reese Career and Technical Center in Sugar Land, TX. Finished 1st in qualifications with a perfect 5-0-0 record.</p>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="num">1st</div>
+                    <div class="label">Quals Ranking</div>
+                </div>
+                <div class="stat-box">
+                    <div class="num">5-0-0</div>
+                    <div class="label">Win-Loss-Tie</div>
+                </div>
+                <div class="stat-box">
+                    <div class="num">4.60</div>
+                    <div class="label">Ranking Points</div>
+                </div>
+                <div class="stat-box">
+                    <div class="num">86.80</div>
+                    <div class="label">NP Average Score</div>
+                </div>
             </div>
 
+            <h3>Match Results</h3>
+            <table class="match-table">
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Result</th>
+                        <th>Score</th>
+                        <th>Alliance Partners</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Q-3</td>
+                        <td class="win">WIN</td>
+                        <td>106 - 46</td>
+                        <td><span class="team-highlight">26147 Nano Knights</span>, 30710 Byte Bandits</td>
+                    </tr>
+                    <tr>
+                        <td>Q-6</td>
+                        <td class="win">WIN</td>
+                        <td>149 - 94</td>
+                        <td>22045 Power Breakers, <span class="team-highlight">26147 Nano Knights</span></td>
+                    </tr>
+                    <tr>
+                        <td>Q-12</td>
+                        <td class="win">WIN</td>
+                        <td>48 - 42</td>
+                        <td>13822 RoboVikings, <span class="team-highlight">26147 Nano Knights</span></td>
+                    </tr>
+                    <tr>
+                        <td>Q-14</td>
+                        <td class="win">WIN</td>
+                        <td>40 - 29</td>
+                        <td><span class="team-highlight">26147 Nano Knights</span>, 20249 Phalanx Robotics</td>
+                    </tr>
+                    <tr>
+                        <td>Q-19</td>
+                        <td class="win">WIN</td>
+                        <td>141 - 120</td>
+                        <td>14503 Robo Sapiens, <span class="team-highlight">26147 Nano Knights</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Season History</h2>
             <div class="experience-item">
-                <h4>Programming & Autonomous</h4>
-                <p>Developed autonomous routines and driver-controlled programs for competition robots.</p>
+                <h4>Into the Deep Season (2024-25)</h4>
+                <p>Our first competitive FTC season. Competed in the Into the Deep challenge and finished 8th in our league as a rookie team, surpassing our initial expectations. This season established the team's foundation in robot design, driver practice, and competition strategy.</p>
                 <ul>
-                    <li>Java programming for FTC robot control</li>
-                    <li>Sensor integration (Cameras, color sensors, distance sensors)</li>
-                    <li>Autonomous path planning and navigation</li>
-                    <li>PID control loops for precise movements</li>
-                    <li>Debugging and optimization under time pressure</li>
+                    <li>Finished 8th in league standings as a first-year team</li>
+                    <li>Designed and built a competition-ready robot from scratch</li>
+                    <li>Developed and refined driving strategy across multiple matches</li>
+                    <li>Documented the full build process in the engineering notebook</li>
                 </ul>
             </div>
-
             <div class="experience-item">
-                <h4>Competition Strategy</h4>
-                <p>Collaborated with team to develop winning strategies for FTC competitions.</p>
+                <h4>DECODE Season (2025-26)</h4>
+                <p>Our second season, returning with more experience and a stronger robot. Applied lessons from Into the Deep to improve mechanical reliability, autonomous performance, and competition driving. The Goddard Tournament results reflect that growth directly.</p>
                 <ul>
-                    <li>Analyzing game manuals to identify scoring opportunities</li>
-                    <li>Scouting other teams and adapting strategies</li>
-                    <li>Alliance selection and cooperative gameplay</li>
-                    <li>Quick repairs and adjustments between matches</li>
-                    <li>Maintaining composure during high-pressure situations</li>
+                    <li>Finished 1st in qualifications at the Goddard Tournament with a 5-0-0 record</li>
+                    <li>Improved robot design with a mecanum drivetrain and computer vision autonomous</li>
+                    <li>Logged 300+ hours of build and practice time across the season</li>
+                    <li>Continuing in league play with goals of advancing to regional and state championships</li>
                 </ul>
             </div>
+        </section>
 
+        <section>
+            <h2>My Roles and Contributions</h2>
             <div class="experience-item">
-                <h4>Team Collaboration</h4>
-                <p>Working effectively with teammates on all aspects of the robot and competition preparation.</p>
+                <h4>Team Captain</h4>
+                <p>As team captain I organize meetings, keep the team on schedule through the season, make final decisions on robot design direction, and represent the team during competitions and judging sessions.</p>
                 <ul>
-                    <li>Dividing tasks based on team members' strengths</li>
-                    <li>Clear communication during design and testing</li>
-                    <li>Supporting teammates during competitions</li>
-                    <li>Documenting our process in the engineering notebook</li>
+                    <li>Coordinated team meetings and build sessions throughout both seasons</li>
+                    <li>Led design discussions and made final calls on mechanical priorities</li>
+                    <li>Managed communication between team members and mentors</li>
+                    <li>Kept the engineering notebook organized and current</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h4>Lead Builder and Mechanical</h4>
+                <p>Responsible for the physical construction of the robot, including the drivetrain, scoring mechanisms, and structural assembly. Handled iterative testing and rebuilding throughout both seasons.</p>
+                <ul>
+                    <li>Designed and assembled the mecanum wheel drivetrain</li>
+                    <li>Built and tested intake and scoring mechanisms through multiple iterations</li>
+                    <li>Selected motors, servos, and structural components based on game requirements</li>
+                    <li>Performed quick repairs and adjustments between matches at competitions</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h4>Driver</h4>
+                <p>Served as the primary driver during competition matches, responsible for executing the team's game strategy in real time. A 5-0-0 record at the Goddard Tournament reflects the consistency built through extensive practice.</p>
+                <ul>
+                    <li>Practiced driver control routines to build consistency before competitions</li>
+                    <li>Executed game strategy under competition pressure across both seasons</li>
+                    <li>Adapted driving approach in real time based on alliance partners and opponents</li>
+                    <li>Coordinated with the programmer on autonomous and driver-control transitions</li>
                 </ul>
             </div>
         </section>
@@ -273,22 +208,21 @@
         <section>
             <h2>Robot Gallery</h2>
             <p style="margin-bottom: 20px;">Photos from FTC competitions and robot builds:</p>
-            
             <div class="image-gallery">
                 <div class="image-card">
-                    <div class="placeholder-image">Add Robot Image 1</div>
+                    <div class="placeholder-image">Add Robot Image</div>
                     <div class="caption">Competition Robot</div>
                 </div>
                 <div class="image-card">
-                    <div class="placeholder-image">Add Robot Image 2</div>
-                    <div class="caption">Mechanism Design</div>
+                    <div class="placeholder-image">Add Robot Image</div>
+                    <div class="caption">Mechanism Detail</div>
                 </div>
                 <div class="image-card">
-                    <div class="placeholder-image">Add Robot Image 3</div>
+                    <div class="placeholder-image">Add Robot Image</div>
                     <div class="caption">Team at Competition</div>
                 </div>
                 <div class="image-card">
-                    <div class="placeholder-image">Add Robot Image 4</div>
+                    <div class="placeholder-image">Add Robot Image</div>
                     <div class="caption">Robot in Action</div>
                 </div>
             </div>
@@ -298,28 +232,28 @@
             <h2>Technical Skills Developed</h2>
             <h3>Mechanical Engineering</h3>
             <ul>
-                <li>Understanding gear ratios and mechanical advantage</li>
-                <li>Designing custom brackets and mounts</li>
-                <li>Using power tools safely and effectively</li>
-                <li>Material selection for strength and weight</li>
+                <li>Gear ratios, mechanical advantage, and motor torque selection</li>
+                <li>Designing custom brackets, mounts, and structural components</li>
+                <li>Using power tools safely during build sessions</li>
+                <li>Material selection for strength and weight tradeoffs</li>
+                <li>Mecanum drivetrain design and wheel placement</li>
             </ul>
-
-            <h3>Programming & Software</h3>
+            <h3>Competition and Strategy</h3>
             <ul>
-                <li>Java programming for robotics applications</li>
-                <li>Version control with Git for team collaboration</li>
-                <li>Sensor calibration and data processing</li>
-                <li>Real-time debugging and troubleshooting</li>
+                <li>Analyzing game manuals to identify the highest-value scoring opportunities</li>
+                <li>Scouting opposing teams and adjusting strategy between matches</li>
+                <li>Alliance coordination and cooperative gameplay</li>
+                <li>Quick mechanical diagnosis and repair during competition downtime</li>
             </ul>
-
-            <h3>Problem Solving Under Pressure</h3>
+            <h3>Leadership and Teamwork</h3>
             <ul>
-                <li>Quick diagnosis of mechanical failures</li>
-                <li>Adapting to unexpected challenges during matches</li>
-                <li>Making strategic decisions in real-time</li>
-                <li>Learning from failures and iterating quickly</li>
+                <li>Running a five-person team across a full competitive season</li>
+                <li>Dividing tasks based on team members' strengths</li>
+                <li>Maintaining clear communication during high-pressure build and competition days</li>
+                <li>Engineering notebook documentation and team record keeping</li>
             </ul>
         </section>
+
     </div>
 
     <footer>
