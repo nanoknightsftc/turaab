@@ -4,62 +4,458 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics - Turaab Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --purple: #764ba2;
+            --purple-light: #667eea;
+            --purple-faint: #f3eefa;
+            --accent: #764ba2;
+            --text: #1a1a1a;
+            --muted: #555;
+            --bg: #f5f5f5;
+            --white: #ffffff;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
-        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
-        header h1 { font-size: 2.5em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
-        header p { font-size: 1.1em; opacity: 0.95; animation: fadeInUp 1s ease; }
-        nav { background: white; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; text-align: center; }
-        nav a { color: #764ba2; text-decoration: none; margin: 0 20px; padding: 10px 15px; font-weight: 600; transition: all 0.3s; border-radius: 5px; }
-        nav a:hover { background: #764ba2; color: white; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        section { background: white; margin: 30px 0; padding: 50px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: fadeIn 1s ease; }
-        h2 { color: #764ba2; font-size: 2.2em; margin-bottom: 30px; border-bottom: 3px solid #764ba2; padding-bottom: 10px; }
-        h3 { color: #764ba2; font-size: 1.5em; margin: 25px 0 15px 0; }
-        .experience-item { background: #764ba215; padding: 25px; border-radius: 10px; border-left: 4px solid #764ba2; margin-bottom: 20px; }
-        .experience-item h4 { color: #764ba2; margin-bottom: 10px; font-size: 1.3em; }
-        ul { margin-left: 20px; margin-top: 15px; }
-        ul li { margin-bottom: 10px; line-height: 1.7; }
-        .stats-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 28px 0 10px; }
-        .stat-box { background: #764ba215; border-left: 4px solid #764ba2; border-radius: 8px; padding: 18px 24px; flex: 1; min-width: 140px; }
-        .stat-box .num { font-size: 1.9em; font-weight: 700; color: #764ba2; }
-        .stat-box .label { font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.07em; color: #666; margin-top: 2px; }
-        .match-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95em; }
-        .match-table th { background: #764ba2; color: white; padding: 10px 14px; text-align: left; font-weight: 600; }
-        .match-table td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
+        }
+
+        .header-inner { position: relative; z-index: 1; }
+
+        .breadcrumb {
+            display: inline-block;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75em;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .breadcrumb a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover { color: white; }
+
+        header h1 {
+            font-size: clamp(2em, 5vw, 3.2em);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+            animation: fadeInDown 0.7s ease both;
+        }
+
+        header p {
+            font-size: 1.05em;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+            animation: fadeInUp 0.7s ease 0.15s both;
+        }
+
+        /* ── NAV ── */
+        nav {
+            background: var(--white);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 1px 12px rgba(91,33,182,0.1);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2px;
+        }
+
+        nav a {
+            color: #764ba2;
+            text-decoration: none;
+            padding: 16px 14px;
+            font-weight: 600;
+            font-size: 0.85em;
+            letter-spacing: 0.01em;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            background: var(--white);
+            margin: 30px 0;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(91,33,182,0.07);
+            animation: fadeIn 0.7s ease both;
+        }
+
+        h2 {
+            color: var(--purple);
+            font-size: 1.75em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.025em;
+        }
+
+        h2 span {
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+            margin-top: 10px;
+        }
+
+        h3 {
+            color: var(--purple);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 28px 0 14px;
+            letter-spacing: -0.01em;
+        }
+
+        h3:first-of-type { margin-top: 0; }
+
+        .intro-text {
+            font-size: 1em;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        /* ── ROLE BADGES ── */
+        .role-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background: var(--purple);
+            color: white;
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 0.82em;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── EXTERNAL LINK ── */
+        .external-link {
+            display: inline-block;
+            color: var(--purple);
+            font-weight: 600;
+            font-size: 0.9em;
+            text-decoration: none;
+            padding: 10px 26px;
+            border: 2px solid var(--purple);
+            border-radius: 25px;
+            transition: all 0.25s;
+            letter-spacing: 0.01em;
+        }
+
+        .external-link:hover {
+            background: var(--purple);
+            color: white;
+        }
+
+        /* ── STATS ROW ── */
+        .stats-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 24px 0 10px;
+        }
+
+        .stat-box {
+            background: var(--purple-faint);
+            border-left: 4px solid var(--purple);
+            border-radius: 10px;
+            padding: 18px 24px;
+            flex: 1;
+            min-width: 130px;
+        }
+
+        .stat-box .num {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--purple);
+            font-family: 'DM Mono', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-box .label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* ── MATCH TABLE ── */
+        .match-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.92em;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .match-table th {
+            background: var(--purple);
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .match-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid #ede9f8;
+            color: var(--text);
+        }
+
         .match-table tr:last-child td { border-bottom: none; }
         .match-table tr:nth-child(even) { background: #faf9ff; }
-        .win { color: #16a34a; font-weight: 700; }
-        .team-highlight { font-weight: 700; color: #764ba2; }
-        .role-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-        .badge { background: #764ba2; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; font-weight: 600; }
-        .external-link { display: inline-block; margin-top: 20px; color: #764ba2; font-weight: 600; text-decoration: none; padding: 12px 30px; border: 2px solid #764ba2; border-radius: 25px; transition: all 0.3s; }
-        .external-link:hover { background: #764ba2; color: white; }
-        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .image-card { border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .image-card:hover { transform: scale(1.03); }
-        .image-card img { width: 100%; height: 250px; object-fit: cover; display: block; }
-        .image-card .caption { padding: 15px; background: #f9f9f9; text-align: center; font-weight: 600; color: #764ba2; }
-        .placeholder-image { width: 100%; height: 250px; background: #764ba215; display: flex; align-items: center; justify-content: center; color: #999; font-size: 1.1em; }
-        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { section { padding: 30px 20px; } nav a { display: block; margin: 10px 0; } .stats-row { flex-direction: column; } }
+
+        .win {
+            color: #16a34a;
+            font-weight: 700;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .team-highlight {
+            font-weight: 700;
+            color: var(--purple);
+        }
+
+        /* ── EXPERIENCE ITEMS ── */
+        .experience-item {
+            background: var(--purple-faint);
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 4px solid var(--purple);
+            margin-bottom: 20px;
+        }
+
+        .experience-item:last-child { margin-bottom: 0; }
+
+        .experience-item h4 {
+            color: var(--purple);
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .experience-item p {
+            font-size: 0.95em;
+            line-height: 1.75;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .experience-item ul {
+            margin-left: 0;
+            margin-top: 10px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .experience-item ul li {
+            font-size: 0.93em;
+            line-height: 1.6;
+            color: var(--text);
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .experience-item ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--purple);
+            border-radius: 50%;
+        }
+
+        /* ── SKILLS LISTS ── */
+        .skills-list {
+            list-style: none;
+            margin: 0 0 8px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skills-list li {
+            font-size: 0.95em;
+            line-height: 1.65;
+            color: var(--text);
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .skills-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            background: var(--purple);
+            border-radius: 50%;
+        }
+
+        /* ── IMAGE GALLERY ── */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(91,33,182,0.1);
+            border: 1.5px solid #e5e0f8;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(91,33,182,0.15);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 220px;
+            background: var(--purple-faint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.9em;
+            font-family: 'DM Mono', monospace;
+            letter-spacing: 0.02em;
+        }
+
+        .image-card .caption {
+            padding: 13px 18px;
+            background: var(--white);
+            border-top: 1px solid #ede9f8;
+            font-weight: 600;
+            font-size: 0.88em;
+            color: var(--purple);
+            font-family: 'DM Mono', monospace;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px;
+            font-size: 0.88em;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            section { padding: 28px 20px; }
+            nav a { padding: 12px 10px; font-size: 0.82em; }
+            .stats-row { flex-direction: column; }
+            .image-gallery { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Robotics (FTC)</h1>
-        <p>Team 26147 Nano Knights | Team Captain, Builder, Driver</p>
+        <div class="header-inner">
+            <div class="breadcrumb"><a href="/">Turaab Ali</a> / Robotics</div>
+            <h1>Robotics (FTC)</h1>
+            <p>Team 26147 Nano Knights &nbsp;·&nbsp; Team Captain, Builder, Driver</p>
+        </div>
     </header>
 
     <nav>
         <a href="/">Home</a>
         <a href="/pc-building/">PC Building</a>
         <a href="/problem-solving/">Problem Solving</a>
-        <a href="/robotics/">Robotics</a>
+        <a href="/robotics/" class="active">Robotics</a>
         <a href="/technical/">Technical</a>
         <a href="/troubleshooting/">Troubleshooting</a>
         <a href="/photo-video/">Photography & Videography</a>
@@ -69,8 +465,8 @@
     <div class="container">
 
         <section>
-            <h2>About This Skill</h2>
-            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 16px;">I am a founding member and team captain of Nano Knights FTC Team 26147, a second-year FIRST Tech Challenge team based in Sugar Land, TX. Across two seasons I have served as the team's lead builder, driver, and captain, responsible for mechanical design decisions, competition driving, and keeping the team organized throughout the full season. FTC has pushed me to work under pressure, make fast decisions, and lead a team through both preparation and live competition.</p>
+            <h2>About This Skill <span></span></h2>
+            <p class="intro-text">I am a founding member and team captain of Nano Knights FTC Team 26147, a second-year FIRST Tech Challenge team based in Sugar Land, TX. Across two seasons I have served as the team's lead builder, driver, and captain, responsible for mechanical design decisions, competition driving, and keeping the team organized throughout the full season. FTC has pushed me to work under pressure, make fast decisions, and lead a team through both preparation and live competition.</p>
             <div class="role-badges">
                 <span class="badge">Team Captain</span>
                 <span class="badge">Lead Builder</span>
@@ -81,8 +477,8 @@
         </section>
 
         <section>
-            <h2>Goddard Tournament Results</h2>
-            <p style="line-height: 1.8; margin-bottom: 8px;">Competed at the Goddard Tournament on February 7, 2026 at James Reese Career and Technical Center in Sugar Land, TX. Finished 1st in qualifications with a perfect 5-0-0 record.</p>
+            <h2>Goddard Tournament Results <span></span></h2>
+            <p class="intro-text">Competed at the Goddard Tournament on February 7, 2026 at James Reese Career and Technical Center in Sugar Land, TX. Finished 1st in qualifications with a perfect 5-0-0 record.</p>
             <div class="stats-row">
                 <div class="stat-box">
                     <div class="num">1st</div>
@@ -98,7 +494,7 @@
                 </div>
                 <div class="stat-box">
                     <div class="num">86.80</div>
-                    <div class="label">NP Average Score</div>
+                    <div class="label">NP Avg Score</div>
                 </div>
             </div>
 
@@ -148,7 +544,7 @@
         </section>
 
         <section>
-            <h2>Season History</h2>
+            <h2>Season History <span></span></h2>
             <div class="experience-item">
                 <h4>Into the Deep Season (2024-25)</h4>
                 <p>Our first competitive FTC season. Competed in the Into the Deep challenge and finished 8th in our league as a rookie team, surpassing our initial expectations. This season established the team's foundation in robot design, driver practice, and competition strategy.</p>
@@ -172,7 +568,7 @@
         </section>
 
         <section>
-            <h2>My Roles and Contributions</h2>
+            <h2>My Roles and Contributions <span></span></h2>
             <div class="experience-item">
                 <h4>Team Captain</h4>
                 <p>As team captain I organize meetings, keep the team on schedule through the season, make final decisions on robot design direction, and represent the team during competitions and judging sessions.</p>
@@ -206,8 +602,8 @@
         </section>
 
         <section>
-            <h2>Robot Gallery</h2>
-            <p style="margin-bottom: 20px;">Photos from FTC competitions and robot builds:</p>
+            <h2>Robot Gallery <span></span></h2>
+            <p class="intro-text">Photos from FTC competitions and robot builds:</p>
             <div class="image-gallery">
                 <div class="image-card">
                     <div class="placeholder-image">Add Robot Image</div>
@@ -229,24 +625,27 @@
         </section>
 
         <section>
-            <h2>Technical Skills Developed</h2>
+            <h2>Technical Skills Developed <span></span></h2>
+
             <h3>Mechanical Engineering</h3>
-            <ul>
+            <ul class="skills-list">
                 <li>Gear ratios, mechanical advantage, and motor torque selection</li>
                 <li>Designing custom brackets, mounts, and structural components</li>
                 <li>Using power tools safely during build sessions</li>
                 <li>Material selection for strength and weight tradeoffs</li>
                 <li>Mecanum drivetrain design and wheel placement</li>
             </ul>
+
             <h3>Competition and Strategy</h3>
-            <ul>
+            <ul class="skills-list">
                 <li>Analyzing game manuals to identify the highest-value scoring opportunities</li>
                 <li>Scouting opposing teams and adjusting strategy between matches</li>
                 <li>Alliance coordination and cooperative gameplay</li>
                 <li>Quick mechanical diagnosis and repair during competition downtime</li>
             </ul>
+
             <h3>Leadership and Teamwork</h3>
-            <ul>
+            <ul class="skills-list">
                 <li>Running a five-person team across a full competitive season</li>
                 <li>Dividing tasks based on team members' strengths</li>
                 <li>Maintaining clear communication during high-pressure build and competition days</li>
@@ -259,5 +658,6 @@
     <footer>
         <p>&copy; 2026 Turaab Ali. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

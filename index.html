@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turaab Ali - PC Builder & Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --purple: #764ba2;
@@ -13,8 +13,8 @@
             --purple-faint: #f3eefa;
             --accent: #764ba2;
             --dark: #764ba2;
-            --text: #333;
-            --muted: #666;
+            --text: #1a1a1a;
+            --muted: #555;
             --bg: #f5f5f5;
             --white: #ffffff;
         }
@@ -22,10 +22,12 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Sora', sans-serif;
+            font-family: 'Inter', sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* ── HEADER ── */
@@ -64,17 +66,18 @@
         header h1 {
             font-size: clamp(2.4em, 6vw, 4em);
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             margin-bottom: 12px;
             animation: fadeInDown 0.7s ease 0.1s both;
         }
 
         .tagline {
-            font-size: 1.1em;
+            font-size: 1.05em;
             color: rgba(255,255,255,0.9);
-            font-weight: 300;
+            font-weight: 400;
             animation: fadeInUp 0.7s ease 0.2s both;
             margin-bottom: 28px;
+            letter-spacing: 0.01em;
         }
 
         .stats-row {
@@ -95,13 +98,15 @@
             font-weight: 700;
             color: white;
             font-family: 'DM Mono', monospace;
+            letter-spacing: -0.02em;
         }
 
         .stat-label {
             font-size: 0.78em;
             color: rgba(255,255,255,0.75);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
+            font-weight: 500;
         }
 
         /* ── NAV ── */
@@ -123,7 +128,7 @@
             text-decoration: none;
             padding: 16px 14px;
             font-weight: 600;
-            font-size: 0.88em;
+            font-size: 0.85em;
             letter-spacing: 0.01em;
             transition: all 0.2s;
             border-bottom: 3px solid transparent;
@@ -153,10 +158,10 @@
 
         h2 {
             color: var(--purple);
-            font-size: 1.9em;
+            font-size: 1.75em;
             font-weight: 700;
             margin-bottom: 24px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
         }
 
         h2 span {
@@ -177,10 +182,11 @@
         }
 
         .about-text p {
-            font-size: 1.05em;
-            line-height: 1.85;
+            font-size: 1em;
+            line-height: 1.8;
             color: var(--text);
             margin-bottom: 16px;
+            font-weight: 400;
         }
 
         .about-text p:last-child { margin-bottom: 0; }
@@ -193,11 +199,12 @@
 
         .about-highlights h3 {
             color: var(--purple);
-            font-size: 0.85em;
+            font-size: 0.78em;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             margin-bottom: 16px;
             font-family: 'DM Mono', monospace;
+            font-weight: 500;
         }
 
         .highlight-item {
@@ -219,8 +226,9 @@
         }
 
         .hi-text {
-            font-size: 0.95em;
-            line-height: 1.5;
+            font-size: 0.93em;
+            line-height: 1.55;
+            font-weight: 400;
         }
 
         /* ── SKILLS GRID ── */
@@ -273,33 +281,37 @@
 
         .skill-card h3 {
             color: var(--purple);
-            font-size: 1.1em;
-            font-weight: 700;
+            font-size: 1.05em;
+            font-weight: 600;
             margin-bottom: 10px;
+            letter-spacing: -0.01em;
         }
 
         .skill-card p {
-            font-size: 0.92em;
+            font-size: 0.9em;
             line-height: 1.65;
             color: var(--muted);
+            font-weight: 400;
         }
 
         .skill-card .arrow {
             color: #764ba2;
-            font-weight: bold;
+            font-weight: 500;
             margin-top: 14px;
             display: block;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-family: 'DM Mono', monospace;
         }
 
         /* ── FOOTER ── */
         footer {
-            background: #333;
-            color: white;
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.7);
             text-align: center;
             padding: 30px;
-            font-size: 0.9em;
+            font-size: 0.88em;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
 
         /* ── ANIMATIONS ── */
@@ -344,7 +356,7 @@
                     <span class="stat-label">Robotics Competitor</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-num">IComms</span>
+                    <span class="stat-num">iComms</span>
                     <span class="stat-label">Media Volunteer</span>
                 </div>
             </div>
@@ -368,15 +380,13 @@
             <h2>About Me <span></span></h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>
-                        I'm Turaab Ali, a 9th grade engineer with hands-on experience in custom PC building, hardware troubleshooting, and competitive robotics through FIRST Tech Challenge. I've completed multiple full custom builds — handling everything from component selection and cable management to BIOS configuration and performance tuning.
-                    </p>
-                    <p>
-                        On my FTC robotics team, I serve as a builder, driver, and team captain — taking ownership of mechanical assembly, competition strategy, and leading the team through the season. Outside of tech, I volunteer with the Ismaili iComms media team, handling photography, videography, and video editing for community events and social media.
-                    </p>
-                    <p>
-                        I'm driven by the challenge of making things work — whether that's a computer, a robot, or a piece of content.
-                    </p>
+                    <ul class="about-bullets">
+                        <li>9th grade engineer with hands-on experience in custom PC building, hardware troubleshooting, and competitive robotics through FIRST Tech Challenge.</li>
+                        <li>Completed multiple full custom PC builds, handling component selection, cable management, BIOS configuration, and performance tuning from start to finish.</li>
+                        <li>FTC Team Captain, Builder, and Driver, responsible for mechanical assembly, competition strategy, and leading the team through the season.</li>
+                        <li>Volunteer with the Ismaili iComms media team, covering photography, videography, and video editing for community events and social media.</li>
+                        <li>Driven by the challenge of making things work, whether that is a computer, a robot, or a piece of content.</li>
+                    </ul>
                 </div>
                 <div class="about-highlights">
                     <h3>Quick Highlights</h3>
@@ -386,15 +396,15 @@
                     </div>
                     <div class="highlight-item">
                         <div class="hi-dot"></div>
-                        <div class="hi-text">FTC Team Captain, Builder & Driver — led mechanical and competition strategy</div>
+                        <div class="hi-text">FTC Team Captain: Builder & Driver, led mechanical and competition strategy</div>
                     </div>
                     <div class="highlight-item">
                         <div class="hi-dot"></div>
-                        <div class="hi-text">Ismaili iComms volunteer — event photography, videography & video editing for community social media</div>
+                        <div class="hi-text">Ismaili iComms volunteer: event photography, videography & video editing for community social media</div>
                     </div>
                     <div class="highlight-item">
                         <div class="hi-dot"></div>
-                        <div class="hi-text">9th grade — actively building a real-world portfolio while still in school</div>
+                        <div class="hi-text">9th grade, actively building a real-world portfolio while still in school</div>
                     </div>
                 </div>
             </div>
