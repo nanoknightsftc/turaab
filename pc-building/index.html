@@ -31,7 +31,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ── NAV (TOP) ── */
         nav {
             background: var(--dark-2);
             padding: 0 24px;
@@ -63,7 +62,6 @@
             border-bottom-color: var(--red);
         }
 
-        /* ── HEADER ── */
         header {
             background: var(--red);
             color: white;
@@ -124,14 +122,12 @@
             animation: fadeInUp 0.7s ease 0.15s both;
         }
 
-        /* ── CONTAINER ── */
         .container {
             max-width: 1500px;
             margin: 0 auto;
             padding: 28px 28px 60px;
         }
 
-        /* ── SECTIONS ── */
         section {
             background: var(--dark-2);
             margin: 24px 0;
@@ -179,7 +175,6 @@
 
         .intro-text:last-child { margin-bottom: 0; }
 
-        /* ── SPECS GRID ── */
         .specs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -213,7 +208,6 @@
             letter-spacing: -0.01em;
         }
 
-        /* ── EXPERIENCE ITEMS ── */
         .experience-item {
             background: var(--dark-3);
             padding: 28px;
@@ -269,7 +263,6 @@
             opacity: 0.75;
         }
 
-        /* ── SKILLS LISTS ── */
         .skills-list {
             list-style: none;
             margin: 0;
@@ -299,7 +292,6 @@
             opacity: 0.75;
         }
 
-        /* ── IMAGE GALLERY ── */
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -338,7 +330,6 @@
             font-family: 'DM Mono', monospace;
         }
 
-        /* ── FOOTER ── */
         footer {
             background: var(--dark-2);
             color: var(--muted);
@@ -352,7 +343,6 @@
 
         footer b { color: var(--red); font-weight: 600; }
 
-        /* ── ANIMATIONS ── */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(16px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -366,7 +356,6 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
             section { padding: 36px 28px; }
         }
@@ -509,6 +498,18 @@
                 </ul>
             </div>
             <div class="experience-item">
+                <h4>Self-Hosted Photo Server with Immich on TrueNAS</h4>
+                <p>Independently set up a fully self-hosted photo backup system on TrueNAS, migrating completely off Google Drive without any outside help. Configured Immich as a local Google Photos alternative and connected all household mobile devices to automatically back up photos to the home server.</p>
+                <ul>
+                    <li>Installed and configured TrueNAS as the base operating system for a home server</li>
+                    <li>Deployed Immich via TrueNAS Apps and resolved container storage path and dataset configuration issues</li>
+                    <li>Set up a RAID 1 mirrored pool using two 500GB drives for photo storage redundancy</li>
+                    <li>Configured automatic photo backup from Android devices on the local network</li>
+                    <li>Diagnosed and fixed network configuration issues including DNS, default gateway, and routing</li>
+                    <li>Migrated personal photo library off Google Drive entirely to a self-hosted solution</li>
+                </ul>
+            </div>
+            <div class="experience-item">
                 <h4>Storage Configuration</h4>
                 <p>Experienced in setting up multi-drive storage systems across both consumer and server builds, using NVMe for the OS and primary applications, SATA SSDs for secondary storage, and HDDs for bulk data.</p>
                 <ul>
@@ -560,6 +561,8 @@
                 <li>Windows and Linux operating system installation</li>
                 <li>Driver installation and update management</li>
                 <li>System stability testing and benchmarking with tools like Cinebench and 3DMark</li>
+                <li>TrueNAS setup and administration including ZFS pool configuration and app deployment</li>
+                <li>Self-hosted service configuration and network troubleshooting</li>
             </ul>
         </section>
 
