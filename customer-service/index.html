@@ -1,466 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Service - Turaab Ali</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --purple: #764ba2;
-            --purple-light: #667eea;
-            --purple-faint: #f3eefa;
-            --accent: #764ba2;
-            --text: #1a1a1a;
-            --muted: #555;
-            --bg: #f5f5f5;
-            --white: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── HEADER ── */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 20px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
-        }
-
-        .header-inner { position: relative; z-index: 1; }
-
-        .breadcrumb {
-            display: inline-block;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.75em;
-            color: rgba(255,255,255,0.7);
-            letter-spacing: 0.08em;
-            margin-bottom: 16px;
-        }
-
-        .breadcrumb a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover { color: white; }
-
-        header h1 {
-            font-size: clamp(2em, 5vw, 3.2em);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-            animation: fadeInDown 0.7s ease both;
-        }
-
-        header p {
-            font-size: 1.05em;
-            color: rgba(255,255,255,0.9);
-            font-weight: 400;
-            animation: fadeInUp 0.7s ease 0.15s both;
-        }
-
-        /* ── NAV ── */
-        nav {
-            background: var(--white);
-            padding: 0 20px;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 1px 12px rgba(91,33,182,0.1);
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2px;
-        }
-
-        nav a {
-            color: #764ba2;
-            text-decoration: none;
-            padding: 16px 14px;
-            font-weight: 600;
-            font-size: 0.85em;
-            letter-spacing: 0.01em;
-            transition: all 0.2s;
-            border-bottom: 3px solid transparent;
-        }
-
-        nav a:hover, nav a.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
-        }
-
-        /* ── CONTAINER ── */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px 20px 60px;
-        }
-
-        /* ── SECTIONS ── */
-        section {
-            background: var(--white);
-            margin: 30px 0;
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(91,33,182,0.07);
-            animation: fadeIn 0.7s ease both;
-        }
-
-        h2 {
-            color: var(--purple);
-            font-size: 1.75em;
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -0.025em;
-        }
-
-        h2 span {
-            display: block;
-            width: 40px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-            margin-top: 10px;
-        }
-
-        .intro-text {
-            font-size: 1em;
-            line-height: 1.8;
-            color: var(--text);
-        }
-
-        /* ── EXPERIENCE ITEMS ── */
-        .experience-item {
-            background: var(--purple-faint);
-            padding: 28px;
-            border-radius: 12px;
-            border-left: 4px solid var(--purple);
-            margin-bottom: 20px;
-        }
-
-        .experience-item:last-child { margin-bottom: 0; }
-
-        .experience-item h4 {
-            color: var(--purple);
-            margin-bottom: 10px;
-            font-size: 1.05em;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        .experience-item p {
-            font-size: 0.95em;
-            line-height: 1.75;
-            color: var(--text);
-            margin-bottom: 12px;
-        }
-
-        .experience-item ul {
-            margin-left: 0;
-            margin-top: 10px;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .experience-item ul li {
-            font-size: 0.93em;
-            line-height: 1.6;
-            color: var(--text);
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .experience-item ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 6px;
-            height: 6px;
-            background: var(--purple);
-            border-radius: 50%;
-        }
-
-        /* ── SKILLS GRID ── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .skill-card {
-            background: var(--bg);
-            padding: 24px 26px;
-            border-radius: 12px;
-            border: 1.5px solid #e5e0f8;
-            transition: all 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--purple-light);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: transform 0.25s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 28px rgba(91,33,182,0.12);
-            border-color: #c4b5fd;
-        }
-
-        .skill-card:hover::before { transform: scaleY(1); }
-
-        .skill-card h4 {
-            color: var(--purple);
-            margin-bottom: 8px;
-            font-size: 1em;
-            font-weight: 600;
-        }
-
-        .skill-card p {
-            font-size: 0.9em;
-            line-height: 1.65;
-            color: var(--muted);
-        }
-
-        /* ── PHILOSOPHY LIST ── */
-        .philosophy-list {
-            list-style: none;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .philosophy-list li {
-            font-size: 0.97em;
-            line-height: 1.7;
-            color: var(--text);
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .philosophy-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 9px;
-            width: 6px;
-            height: 6px;
-            background: var(--purple);
-            border-radius: 50%;
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            background: #1a1a1a;
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            padding: 30px;
-            font-size: 0.88em;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-        }
-        .footer-ig {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    font-weight: 500;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Service — Turaab Ali</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   ROOT & GLOBAL (Shared Design System)
+════════════════════════════════════════ */
+:root {
+  --black: #050505;
+  --red:   #E6391B;
+  --red2:  #ff4422;
+  --text:  #c8c3bd;
+  --dim:   #3a3530;
+  --dim2:  #524d47;
+  --mono:  'Share Tech Mono', monospace;
+  --sans:  'Space Grotesk', sans-serif;
+  --disp:  'Bebas Neue', sans-serif;
 }
 
-.footer-ig:hover { color: var(--red); }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 
-.footer-ig svg {
-    width: 15px;
-    height: 15px;
-    flex-shrink: 0;
-    fill: currentColor;
+body {
+  font-family: var(--sans);
+  background: var(--black);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
 }
 
-        /* ── ANIMATIONS ── */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(18px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+/* ── ATMOSPHERE LAYER ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: radial-gradient(circle, rgba(230,57,27,0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 85%);
+}
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
-            section { padding: 28px 20px; }
-            nav a { padding: 12px 10px; font-size: 0.82em; }
-        }
-    </style>
+#globe-glow {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70vw 60vh at 85% 20%, rgba(230,57,27,0.06) 0%, transparent 60%);
+}
+
+#grain {
+  position: fixed; inset: 0; z-index: 2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+}
+
+/* ── CURSOR ── */
+#cur      { position:fixed; width:4px; height:4px; background:var(--red); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); }
+#cur-ring { position:fixed; width:26px; height:26px; border:1px solid var(--red); pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:0.45; transition: width .3s, height .3s, opacity .3s; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(5,5,5,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(230,57,27,0.15);
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
+}
+
+.nav-logo { font-family: var(--mono); font-size: 0.75em; color: var(--red); letter-spacing: 0.1em; }
+.nav-logo span { color: var(--dim2); }
+.nav-links { display:flex; }
+.nav-links a {
+  color: var(--dim2); text-decoration: none; font-family: var(--mono); font-size: 0.65em;
+  letter-spacing: 0.12em; padding: 0 18px; height: 52px; display: flex; align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.04); transition: color .2s;
+}
+.nav-links a.active { color: #fff; border-bottom: 1px solid var(--red); }
+.nav-links a:hover { color: #fff; }
+
+/* ── HERO ── */
+#hero-min {
+  position: relative; z-index: 3;
+  padding: 120px 10vw 40px;
+}
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 0.72em; color: var(--red);
+  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px;
+}
+.hero-name {
+  font-family: var(--disp); font-size: clamp(4em, 10vw, 8em);
+  letter-spacing: 0.05em; line-height: 0.9; color: #fff;
+}
+
+/* ── CONTENT ── */
+main { position: relative; z-index: 3; max-width: 1400px; margin: 0 auto; padding: 0 10vw 120px; }
+
+.sec {
+  padding: 80px 0;
+  position: relative;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.sec.vis { opacity: 1; transform: none; }
+
+.sec::before {
+  content: ''; position: absolute; left: -40px; top: 0; height: 100%; width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(230,57,27,0.3) 15%, rgba(230,57,27,0.3) 85%, transparent);
+}
+
+.sec-hd { display: flex; align-items: baseline; gap: 20px; margin-bottom: 40px; }
+.sec-num { font-family: var(--mono); font-size: 0.65em; color: var(--red); letter-spacing: 0.12em; opacity: 0.7; }
+.sec-title { font-family: var(--disp); font-size: 2.8em; color: #fff; letter-spacing: 0.05em; }
+
+.intro-text { font-size: 1.1em; line-height: 1.7; color: var(--text); max-width: 850px; }
+
+/* ── EXPERIENCE CARDS ── */
+.exp-card {
+  margin-bottom: 32px;
+  padding: 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: border 0.3s;
+}
+.exp-card:hover { border-color: rgba(230,57,27,0.3); }
+.exp-card h4 { font-family: var(--disp); font-size: 1.5em; color: var(--red); margin-bottom: 12px; letter-spacing: 0.05em; }
+.exp-card p { margin-bottom: 20px; font-size: 0.95em; color: var(--text); opacity: 0.8; }
+
+.exp-list { list-style: none; display: grid; gap: 10px; }
+.exp-list li {
+  font-family: var(--mono); font-size: 0.75em; color: var(--dim2);
+  display: flex; gap: 12px;
+}
+.exp-list li::before { content: '>'; color: var(--red); }
+
+/* ── TECH GRID (SKILLS) ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: rgba(230,57,27,0.1);
+  border: 1px solid rgba(230,57,27,0.1);
+}
+
+.skill-item {
+  background: var(--black);
+  padding: 32px;
+  transition: background 0.3s;
+}
+.skill-item:hover { background: rgba(230,57,27,0.03); }
+
+.skill-label {
+  font-family: var(--mono); font-size: 0.6em; color: var(--red);
+  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px;
+}
+.skill-desc { font-size: 0.9em; line-height: 1.6; color: var(--text); }
+
+/* ── PHILOSOPHY ── */
+.philo-box { border-left: 2px solid var(--red); padding-left: 32px; }
+.philo-item { margin-bottom: 24px; }
+.philo-item strong { font-family: var(--mono); color: #fff; font-size: 0.85em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.philo-item span { font-size: 0.95em; color: var(--dim2); }
+
+/* ── FOOTER ── */
+footer {
+  position: relative; z-index: 3; border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 28px 10vw; display: flex; justify-content: space-between; align-items: center;
+}
+.foot-logo { font-family: var(--disp); font-size: 1.3em; color: var(--dim2); }
+.foot-copy { font-family: var(--mono); font-size: 0.6em; color: var(--dim); }
+
+#pcv { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.25; }
+
+@media (max-width:900px) {
+  nav { padding: 0 20px; }
+  .nav-links a { padding: 0 10px; font-size: 0.55em; }
+  .sec::before { left: -20px; }
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="header-inner">
-            <div class="breadcrumb"><a href="/">Turaab Ali</a> / Customer Service</div>
-            <h1>Customer Service</h1>
-            <p>Clear communication and genuine care for every client</p>
+<div id="globe-glow"></div>
+<div id="grain"></div>
+<canvas id="pcv"></canvas>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<nav>
+  <div class="nav-logo">TURAAB_ALI <span>// v2.0</span></div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/pc-building/">PC Building</a>
+    <a href="/problem-solving/">Problem Solving</a>
+    <a href="/robotics/">Robotics</a>
+    <a href="/technical/">Technical</a>
+    <a href="/troubleshooting/">Troubleshooting</a>
+    <a href="/customer-service/" class="active">Customer Service</a>
+    <a href="/contact-me/">Contact Me</a>
+  </div>
+</nav>
+
+<header id="hero-min">
+    <div class="hero-eyebrow">Soft Skills / Client Relations</div>
+    <h1 class="hero-name">CUSTOMER SERVICE<span style="color:var(--red); opacity:0.7;">_</span></h1>
+</header>
+
+<main>
+    <section class="sec">
+        <div class="sec-hd">
+            <span class="sec-num">[ 01 ]</span>
+            <h2 class="sec-title">The Philosophy</h2>
         </div>
-    </header>
+        <p class="intro-text">I believe technical expertise is only as valuable as the communication behind it. My approach bridges the gap between complex engineering and human needs, ensuring every client feels heard, informed, and empowered.</p>
+    </section>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/pc-building/">PC Building</a>
-        <a href="/problem-solving/">Problem Solving</a>
-        <a href="/robotics/">Robotics</a>
-        <a href="/technical/">Technical</a>
-        <a href="/troubleshooting/">Troubleshooting</a>
-        <a href="/customer-service/" class="active">Customer Service</a>
-        <a href="/contact-me/">Contact Me</a>
-    </nav>
+    <section class="sec">
+        <div class="sec-hd">
+            <span class="sec-num">[ 02 ]</span>
+            <h2 class="sec-title">Service Matrix</h2>
+        </div>
 
-    <div class="container">
-
-        <section>
-            <h2>About This Skill <span></span></h2>
-            <p class="intro-text">I believe that technical expertise must be paired with clear communication and genuine care for the client's needs. My approach to customer service focuses on understanding what clients really want, explaining technical concepts in accessible terms, and ensuring they are satisfied with the final result.</p>
-        </section>
-
-        <section>
-            <h2>Customer Service Experience <span></span></h2>
-
-            <div class="experience-item">
-                <h4>Understanding Client Needs</h4>
-                <p>Taking time to learn what clients actually need their PC for, rather than assuming.</p>
-                <ul>
-                    <li>Asking detailed questions about use cases (gaming, work, streaming, etc.)</li>
-                    <li>Understanding budget constraints and priorities</li>
-                    <li>Discussing future upgrade paths and scalability</li>
-                    <li>Identifying unstated needs through conversation</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Clear Technical Communication</h4>
-                <p>Explaining complex technical concepts in ways that non-technical people can understand.</p>
-                <ul>
-                    <li>Using analogies and comparisons to explain components</li>
-                    <li>Avoiding unnecessary jargon while remaining accurate</li>
-                    <li>Providing visual aids when helpful</li>
-                    <li>Patiently answering questions at any level</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Setting Realistic Expectations</h4>
-                <p>Being honest about what is possible within constraints and timeline.</p>
-                <ul>
-                    <li>Providing accurate time estimates for builds and repairs</li>
-                    <li>Explaining performance expectations for different budgets</li>
-                    <li>Being upfront about potential complications</li>
-                    <li>Following through on commitments</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h4>Post-Service Support</h4>
-                <p>Staying available after delivery to ensure client satisfaction.</p>
-                <ul>
-                    <li>Checking in after delivery to ensure everything works</li>
-                    <li>Answering follow-up questions promptly</li>
-                    <li>Providing guidance on system maintenance</li>
-                    <li>Being available for troubleshooting if issues arise</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Communication Skills <span></span></h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Active Listening</h4>
-                    <p>Truly hearing what clients say to understand their actual needs and concerns.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Patience</h4>
-                    <p>Taking the time to explain things thoroughly without rushing or showing frustration.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Transparency</h4>
-                    <p>Being honest about costs, timelines, and what can realistically be achieved.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Adaptability</h4>
-                    <p>Adjusting my communication style based on the client's technical background.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Problem Resolution</h4>
-                    <p>Addressing concerns quickly and finding solutions that satisfy the client.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Professionalism</h4>
-                    <p>Maintaining a respectful, reliable, and courteous approach in all interactions.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>My Customer Service Philosophy <span></span></h2>
-            <ul class="philosophy-list">
-                <li><strong>Clients come first:</strong> Their satisfaction and experience are the top priority.</li>
-                <li><strong>Education over sales:</strong> I would rather help someone make the right choice than push expensive options.</li>
-                <li><strong>Long-term relationships:</strong> Building trust leads to repeat business and referrals.</li>
-                <li><strong>Quality over speed:</strong> Taking the time to do things right the first time.</li>
-                <li><strong>Continuous improvement:</strong> Learning from feedback to provide better service.</li>
+        <div class="exp-card">
+            <h4>Clear Technical Communication</h4>
+            <p>Translating high-level jargon into actionable insights for non-technical stakeholders.</p>
+            <ul class="exp-list">
+                <li>Analogy-driven component explanations</li>
+                <li>Visual aid integration for hardware troubleshooting</li>
+                <li>Proactive status reporting and milestone updates</li>
             </ul>
-        </section>
+        </div>
 
-    </div>
+        <div class="exp-card">
+            <h4>Expectation Management</h4>
+            <p>Maintaining project integrity through honest timelines and performance projections.</p>
+            <ul class="exp-list">
+                <li>Detailed cost-benefit analysis for hardware tiers</li>
+                <li>Accurate "time-to-completion" scheduling</li>
+                <li>Transparent disclosure of potential technical risks</li>
+            </ul>
+        </div>
 
-   <footer>
-    <p>&copy; 2026 <b>Turaab Ali</b> &nbsp;·&nbsp; All rights reserved. &nbsp;·&nbsp;
-        <a href="https://www.instagram.com/turaaboffical/" target="_blank" rel="noopener noreferrer" class="footer-ig">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            @turaaboffical
-        </a>
-    </p>
+        <div class="exp-card">
+            <h4>Post-Service Integrity</h4>
+            <p>Ensuring long-term system stability through dedicated follow-up support.</p>
+            <ul class="exp-list">
+                <li>System maintenance guidance and documentation</li>
+                <li>24-hour delivery check-in protocols</li>
+                <li>Rapid-response troubleshooting for legacy builds</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="sec-hd">
+            <span class="sec-num">[ 03 ]</span>
+            <h2 class="sec-title">Communication Stack</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-label">Active Listening</div>
+                <div class="skill-desc">Identifying unstated client needs through targeted inquiry and behavioral observation.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">Adaptability</div>
+                <div class="skill-desc">Modulating technical depth based on the specific background of the audience.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">Transparency</div>
+                <div class="skill-desc">Open-book accounting of labor hours and component sourcing costs.</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">Resolution</div>
+                <div class="skill-desc">Rapid conflict mitigation focused on functional outcomes and client satisfaction.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="sec-hd">
+            <span class="sec-num">[ 04 ]</span>
+            <h2 class="sec-title">Core Principles</h2>
+        </div>
+        <div class="philo-box">
+            <div class="philo-item">
+                <strong>Education over sales</strong>
+                <span>Prioritizing client literacy over profit margins.</span>
+            </div>
+            <div class="philo-item">
+                <strong>Quality over speed</strong>
+                <span>Refusing to bypass testing protocols to meet arbitrary deadlines.</span>
+            </div>
+            <div class="philo-item">
+                <strong>Scalable Trust</strong>
+                <span>Building long-term relationships through consistent technical reliability.</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+  <div class="foot-logo">TURAAB_ALI</div>
+  <div class="foot-copy">&copy; 2026 <b>Turaab Ali</b> &nbsp;·&nbsp; All rights reserved.</div>
 </footer>
 
+<script>
+/* ── UI LOGIC ── */
+const cur=document.getElementById('cur'), ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function a(){ rx+=(mx-rx)*0.1; ry+=(my-ry)*0.1; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(a); })();
+
+document.querySelectorAll('a, .exp-card, .skill-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ ring.style.width='48px'; ring.style.height='48px'; ring.style.opacity='0.2'; });
+  el.addEventListener('mouseleave',()=>{ ring.style.width='26px'; ring.style.height='26px'; ring.style.opacity='0.45'; });
+});
+
+/* Particle Canvas */
+const cv=document.getElementById('pcv'), cx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){ W=cv.width=window.innerWidth; H=cv.height=window.innerHeight; }
+class P{
+  constructor(){ this.reset(); }
+  reset(){ this.x=Math.random()*W; this.y=Math.random()*H; this.sz=Math.random()*1.2+0.3; this.vx=(Math.random()-.5)*.35; this.vy=(Math.random()-.5)*.35; this.op=Math.random()*.5+.1; this.life=Math.random()*250+80; this.age=0; }
+  tick(){ this.x+=this.vx; this.y+=this.vy; this.age++; if(this.age>this.life||this.x<0||this.x>W||this.y<0||this.y>H) this.reset(); }
+  draw(){ const f=this.age<30?this.age/30:(this.age>this.life-30?(this.life-this.age)/30:1); cx.globalAlpha=this.op*f; cx.fillStyle=Math.random()>.9?'#E6391B':'#fff'; cx.beginPath(); cx.arc(this.x,this.y,this.sz,0,Math.PI*2); cx.fill(); }
+}
+function loop(){ cx.clearRect(0,0,W,H); pts.forEach(p=>{p.tick();p.draw();}); requestAnimationFrame(loop); }
+resize();
+for(let i=0;i<80;i++) pts.push(new P());
+loop();
+window.addEventListener('resize', resize);
+
+/* Scroll Observer */
+const obs=new IntersectionObserver(en=>en.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis'); }),{threshold:0.1});
+document.querySelectorAll('.sec').forEach(s=>obs.observe(s));
+</script>
 </body>
 </html>
