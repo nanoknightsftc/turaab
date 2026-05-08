@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Turaab Ali — PC Builder & Engineer</title>
+<title>Turaab Ali - PC Builder & Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ════════════════════════════════════════
@@ -15,8 +15,8 @@
   --red2:  #ff4422;
   --green: #00ff88;
   --text:  #c8c3bd;
-  --dim:   #3a3530;
-  --dim2:  #524d47;
+  --dim:   #7c7268;
+  --dim2:  #ffffff;
   --mono:  'Share Tech Mono', monospace;
   --sans:  'Space Grotesk', sans-serif;
   --disp:  'Bebas Neue', sans-serif;
@@ -40,7 +40,7 @@ body {
 
 /* ════════════════════════════════════════
    FULL-PAGE ATMOSPHERE LAYER
-   (covers the entire site — not per-section)
+   (covers the entire site ,  not per-section)
 ════════════════════════════════════════ */
 
 /* 1. Global dot grid  */
@@ -77,7 +77,7 @@ body::after {
 
 @keyframes globeMove {
   0%   { transform: translate(0,0) scale(1); }
-  50%  { transform: translate(3vw,-4vh) scale(1.04); }
+  50%  { transform: translate(3vw,-2vh) scale(1.00); }
   100% { transform: translate(-2vw,3vh) scale(0.97); }
 }
 
@@ -182,7 +182,7 @@ nav::after {
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
 /* ════════════════════════════════════════
-   HERO  — no boxes, pure space + type
+   HERO  ,  no boxes, pure space + type
 ════════════════════════════════════════ */
 #hero {
   position: relative; z-index: 3;
@@ -241,7 +241,7 @@ nav::after {
   margin: 0 6px;
 }
 
-/* big faded "ALI" behind — no bg fill, just text */
+/* big faded "ALI" behind ,  no bg fill, just text */
 .hero-bg-word {
   position: absolute;
   right: -2vw; top: 50%;
@@ -368,7 +368,7 @@ nav::after {
 @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ════════════════════════════════════════
-   MAIN LAYOUT — open, no boxes
+   MAIN LAYOUT ,  open, no boxes
 ════════════════════════════════════════ */
 main {
   position: relative; z-index: 3;
@@ -395,7 +395,7 @@ main {
 
 .sec.vis { opacity:1; transform:none; }
 
-/* left border accent — single line, no fill */
+/* left border accent ,  single line, no fill */
 .sec::before {
   content: '';
   position: absolute;
@@ -451,7 +451,7 @@ main {
 
 .about-body p strong { color: var(--text); font-weight: 600; }
 
-/* terminal — no fill, just border lines */
+/* terminal ,  no fill, just border lines */
 .term {
   border-top: 1px solid rgba(255,255,255,0.07);
   border-left: 1px solid rgba(255,255,255,0.04);
@@ -501,7 +501,7 @@ main {
 .tb { display:block; height:6px; }
 .tcur { display:inline-block; width:7px; height:12px; background:var(--red); opacity:.8; animation: blink 1s step-end infinite; vertical-align:middle; }
 
-/* ─ SKILLS — open list layout ─ */
+/* ─ SKILLS ,  open list layout ─ */
 .skills-list {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -586,7 +586,7 @@ main {
 
 .sk:hover .sk-arrow { opacity: 1; gap: 12px; }
 
-/* ─ APPROACH — open numbered list ─ */
+/* ─ APPROACH ,  open numbered list ─ */
 .approach-list { display: flex; flex-direction: column; }
 
 .ap {
@@ -641,7 +641,7 @@ main {
   color: rgba(200,195,189,0.55);
 }
 
-/* ─ CTA — pure text + line, no box ─ */
+/* ─ CTA ,  pure text + line, no box ─ */
 .cta {
   padding: 80px 0;
   display: flex;
@@ -694,7 +694,7 @@ main {
   overflow: hidden;
 }
 
-/* fill sweeps in from left — not a solid shape, a hover fill */
+/* fill sweeps in from left ,  not a solid shape, a hover fill */
 .cta-btn::after {
   content: '';
   position: absolute;
@@ -740,7 +740,7 @@ footer::before {
 .foot-copy b { color: var(--red); }
 
 /* ════════════════════════════════════════
-   CANVAS — particle field (full page)
+   CANVAS ,  particle field (full page)
 ════════════════════════════════════════ */
 #pcv {
   position: fixed; inset: 0; z-index: 0;
@@ -828,7 +828,7 @@ footer::before {
 <section id="hero">
   <div class="hero-bg-word">ALI</div>
   <div class="hero-eyebrow">[ PC Builder &amp; Engineer ]</div>
-  <h1 class="hero-name">TURAAB<span class="slash">//</span>ALI</h1>
+  <h1 class="hero-name">TURAAB<span class="slash"> </span>ALI</h1>
   <div class="hero-code">
     <span><span class="k">const</span> role = <span class="s">"FTC Team Captain, Builder &amp; Driver"</span>;</span><br>
     <span><span class="k">const</span> skills = [<span class="s">"PC Building"</span>, <span class="s">"Robotics"</span>, <span class="s">"Video"</span>]; <span class="c">// 9th grade</span></span><br>
@@ -836,6 +836,7 @@ footer::before {
   </div>
   <div class="hero-divider"></div>
   <div class="hero-stats-row">
+    
     <div class="h-st">
       <span class="h-st-n">3–5</span>
       <span class="h-st-l">Custom PC Builds</span>
@@ -889,7 +890,7 @@ footer::before {
     </div>
     <div class="about-layout">
       <div class="about-body">
-        <p>9th grade engineer with <strong>hands-on experience</strong> in custom PC building, hardware troubleshooting, and competitive robotics through FIRST Tech Challenge. Not just theory — real builds, real competitions, real results.</p>
+        <p>9th grade engineer with <strong>hands-on experience</strong> in custom PC building, hardware troubleshooting, and competitive robotics through FIRST Tech Challenge. Not just theory ,  real builds, real competitions, real results.</p>
         <p>Completed <strong>multiple full custom PC builds</strong>, handling component selection, cable management, BIOS configuration, and performance tuning from start to finish.</p>
         <p>As <strong>FTC Team Captain, Builder, and Driver</strong>, responsible for mechanical assembly, competition strategy, and leading the team through the season under pressure.</p>
         <p>Volunteer with the <strong>Ismaili iComms media team</strong>, covering photography, videography, and video editing for community events and social media.</p>
@@ -911,7 +912,7 @@ footer::before {
           <span class="tl to ok">✓  Ismaili IComms media volunteer</span>
           <span class="tl to">   photo / video / editing</span>
           <span class="tb"></span>
-          <span class="tl to ok">✓  9th grade — real portfolio in school</span>
+          <span class="tl to ok">✓  9th grade ,  real portfolio in school</span>
           <span class="tb"></span>
           <span class="tl"><span class="tp">$</span> <span class="tcur"></span></span>
         </div>
@@ -932,49 +933,49 @@ footer::before {
 
       <a href="/pc-building/" class="sk">
         <div class="sk-num">SKL-001</div>
-        <span class="sk-icon">🖥</span>
-        <div class="sk-title">PC Building</div>
+        <span class="sk-icon">PC Building</span>
+        <div class="sk-title"></div>
         <div class="sk-desc">Custom assembly, component selection, cable management, BIOS config, and system optimization across multiple completed builds.</div>
         <div class="sk-arrow">See My Builds →</div>
       </a>
 
       <a href="/troubleshooting/" class="sk">
         <div class="sk-num">SKL-002</div>
-        <span class="sk-icon">🔧</span>
-        <div class="sk-title">Hardware Troubleshooting</div>
+        <span class="sk-icon">Hardware Troubleshooting</span>
+        <div class="sk-title"></div>
         <div class="sk-desc">Diagnosing and resolving hardware issues, component testing, thermal management, and performance optimization.</div>
         <div class="sk-arrow">Learn More →</div>
       </a>
 
       <a href="/robotics/" class="sk">
         <div class="sk-num">SKL-003</div>
-        <span class="sk-icon">🤖</span>
-        <div class="sk-title">Robotics (FTC)</div>
-        <div class="sk-desc">Team captain, builder, and driver for FIRST Tech Challenge — robot design, mechanical assembly, and competition strategy.</div>
+        <span class="sk-icon">Robotics (FTC)</span>
+        <div class="sk-title"></div>
+        <div class="sk-desc">Team captain, builder, and driver for FIRST Tech Challenge ,  robot design, mechanical assembly, and competition strategy.</div>
         <div class="sk-arrow">See Robotics →</div>
       </a>
 
       <a href="/technical/" class="sk">
         <div class="sk-num">SKL-004</div>
-        <span class="sk-icon">⚙️</span>
-        <div class="sk-title">Technical Knowledge</div>
+        <span class="sk-icon">Technical Knowledge</span>
+        <div class="sk-title"></div>
         <div class="sk-desc">Deep understanding of computer architecture, component compatibility, operating systems, and emerging hardware.</div>
         <div class="sk-arrow">Learn More →</div>
       </a>
 
       <a href="/photo-video/" class="sk">
         <div class="sk-num">SKL-005</div>
-        <span class="sk-icon">📷</span>
-        <div class="sk-title">Photography &amp; Video</div>
-        <div class="sk-desc">Event photography, videography, and video editing for the Ismaili iComms team — producing content for community social media.</div>
+        <span class="sk-icon">Photography &amp; Video</span>
+        <div class="sk-title"></div>
+        <div class="sk-desc">Event photography, videography, and video editing for the Ismaili iComms team ,  producing content for community social media.</div>
         <div class="sk-arrow">See My Work →</div>
       </a>
 
       <a href="/problem-solving/" class="sk">
         <div class="sk-num">SKL-006</div>
-        <span class="sk-icon">🧠</span>
-        <div class="sk-title">Problem Solving</div>
-        <div class="sk-desc">Analytical approach to technical challenges — developed through real builds, competition pressure, and hands-on debugging.</div>
+        <span class="sk-icon">Problem Solving</span>
+        <div class="sk-title"></div>
+        <div class="sk-desc">Analytical approach to technical challenges ,  developed through real builds, competition pressure, and hands-on debugging.</div>
         <div class="sk-arrow">Learn More →</div>
       </a>
 
@@ -997,7 +998,7 @@ footer::before {
         <div class="ap-right">
           <div class="ap-label">STEP [ 1 ] — DECONSTRUCT</div>
           <div class="ap-title">Understand the Problem</div>
-          <div class="ap-body">Every build, robot, or debug session starts the same way — break the problem into its smallest pieces and identify the actual failure point before touching anything.</div>
+          <div class="ap-body">Every build, robot, or debug session starts the same way, break the problem into its smallest pieces and identify the actual failure point before touching anything.</div>
         </div>
       </div>
 

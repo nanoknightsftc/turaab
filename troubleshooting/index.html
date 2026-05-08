@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hardware Troubleshooting — Turaab Ali</title>
+<title>Hardware Troubleshooting - Turaab Ali</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ╔══════════════════════════════════════════════════════════════╗
@@ -394,7 +394,7 @@ footer::before {
       <h2 class="sec-title">ABOUT THIS SKILL</h2>
       <span class="sec-slug">// overview.txt</span>
     </div>
-    <p class="intro-text">Troubleshooting hardware is something I developed naturally through building and maintaining my own systems, helping family members and friends with their PCs, and supporting the <strong>Windows Server 2022 setup at Baqir CPA</strong>. When something goes wrong I take a methodical approach — starting with the most likely cause and working outward until the issue is isolated and resolved. Most problems have a logical root cause once you know what to look for.</p>
+    <p class="intro-text">Troubleshooting hardware is something I developed naturally through building and maintaining my own systems, helping family members and friends with their PCs, and supporting the <strong>Windows Server 2022 setup at Baqir CPA</strong>. When something goes wrong I take a methodical approach ,  starting with the most likely cause and working outward until the issue is isolated and resolved. Most problems have a logical root cause once you know what to look for.</p>
   </div>
 
   <div class="rule"></div>
@@ -584,7 +584,7 @@ footer::before {
 </footer>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗
-     ║  SHARED JS — copy this entire <script> block into           ║
+     ║  SHARED JS ,  copy this entire <script> block into           ║
      ║  every page, unchanged.                                     ║
      ╚══════════════════════════════════════════════════════════════╝ -->
 <script>
@@ -613,15 +613,15 @@ function loop(){ cx.clearRect(0,0,W,H);pts.forEach(p=>{p.tick();p.draw();});draw
 resize(); for(let i=0;i<110;i++)pts.push(new P()); loop();
 window.addEventListener('resize',()=>{ resize();pts.forEach(p=>p.reset()); });
 
-/* ── SCROLL REVEAL — sections ── */
+/* ── SCROLL REVEAL ,  sections ── */
 const sObs=new IntersectionObserver(en=>en.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('vis'); }),{threshold:.07});
 document.querySelectorAll('.sec').forEach(s=>sObs.observe(s));
 
-/* ── SCROLL REVEAL — exp items ── */
+/* ── SCROLL REVEAL ,  exp items ── */
 const eObs=new IntersectionObserver(en=>en.forEach((e,i)=>{ if(e.isIntersecting){ e.target.style.transitionDelay=(i*.08)+'s'; e.target.classList.add('vis'); } }),{threshold:.05});
 document.querySelectorAll('.exp-item').forEach(el=>eObs.observe(el));
 
-/* ── SCROLL REVEAL — skill cells ── */
+/* ── SCROLL REVEAL ,  skill cells ── */
 const kObs=new IntersectionObserver(en=>en.forEach(e=>{ if(e.isIntersecting)e.target.querySelectorAll('.sk-o').forEach((c,i)=>{ c.style.transitionDelay=(i*.07)+'s';c.classList.add('vis'); }); }),{threshold:.05});
 document.querySelectorAll('.skills-open').forEach(g=>kObs.observe(g));
 </script>
