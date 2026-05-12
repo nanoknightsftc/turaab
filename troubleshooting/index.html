@@ -79,40 +79,31 @@ body::after {
 #cur      { position:fixed; width:4px; height:4px; background:var(--red); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); }
 #cur-ring { position:fixed; width:26px; height:26px; border:1px solid var(--red); pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:.45; transition:width .3s,height .3s,opacity .3s; }
 
-/* ── NAV ─────────────────────────────────────────────────────── */
+/* ── NAV (Updated to match PC Building) ── */
 nav {
-  position:sticky; top:0; z-index:500;
-  background:rgba(5,5,5,.9);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(230,57,27,.15);
-  padding:0 48px;
-  display:flex; align-items:center; justify-content:space-between;
-  height:52px;
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(5,5,5,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(230,57,27,0.15);
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
 }
-nav::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,transparent,rgba(230,57,27,.4),transparent);
-}
-.nav-logo { font-family:var(--mono); font-size:.75em; color:var(--red); letter-spacing:.1em; }
-.nav-logo span { color:var(--dim2); }
+
+.nav-logo { font-family: var(--mono); font-size: 0.75em; color: var(--red); letter-spacing: 0.1em; }
+.nav-logo span { color: var(--dim2); }
+
 .nav-links { display:flex; }
 .nav-links a {
-  color:var(--dim2); text-decoration:none;
-  font-family:var(--mono); font-size:.65em; letter-spacing:.12em;
-  padding:0 18px; height:52px; display:flex; align-items:center;
-  border-left:1px solid rgba(255,255,255,.04);
-  transition:color .2s; position:relative;
+  color: var(--dim2); text-decoration: none; font-family: var(--mono); font-size: 0.65em;
+  letter-spacing: 0.12em; padding: 0 18px; height: 52px; display: flex; align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.04); transition: color .2s;
 }
-.nav-links a::before { content:attr(data-n); color:var(--red); opacity:.5; margin-right:6px; }
-.nav-links a:hover { color:#fff; }
-.nav-links a.active { color:#fff; }
-.nav-links a.active::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
-  background:var(--red);
-}
-.nav-status { display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:.62em; color:var(--dim2); }
-.s-dot { width:5px; height:5px; border-radius:50%; background:var(--green); animation:blink 2s ease infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.nav-links a.active { color: #fff; border-bottom: 1px solid var(--red); }
+.nav-links a:hover { color: #fff; }
+
+/* Remove the nav::after and .nav-status from your home page CSS to keep it clean */
 
 /* ── PAGE HERO (inner pages) ─────────────────────────────────── */
 .page-hero {
@@ -364,14 +355,15 @@ footer::before {
 <nav>
   <div class="nav-logo">TURAAB_ALI <span>// v2.0</span></div>
   <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/pc-building/">PC Building</a>
-        <a href="/problem-solving/">Problem Solving</a>
-        <a href="/robotics/">Robotics</a>
-        <a href="/technical/">Technical</a>
-        <a href="/troubleshooting/">Troubleshooting</a>
-        <a href="/photo-video/">Photography & Videography</a>
-        <a href="/contact-me/" class="active">Contact Me</a>
+    <a href="/">Home</a>
+    <a href="/pc-building/">PC Building</a>
+    <a href="/problem-solving/">Problem Solving</a>
+    <a href="/robotics/">Robotics</a>
+    <a href="/technical/">Technical</a>
+    <a href="/troubleshooting/"class="active">Troubleshooting</a>
+    <a href="/photo-video/">Photography & Videography</a>
+    <a href="/customer-service/">Customer Service</a>
+    <a href="/contact-me/">Contact Me</a>
   </div>
 </nav>
 

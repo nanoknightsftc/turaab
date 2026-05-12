@@ -15,7 +15,7 @@
   --red2:  #ff4422;
   --green: #00ff88;
   --text:  #c8c3bd;
-  --dim:   #7c7268;
+  --dim:   #ffffff;
   --dim2:  #ffffff;
   --mono:  'Share Tech Mono', monospace;
   --sans:  'Space Grotesk', sans-serif;
@@ -129,9 +129,7 @@ body::after {
 #boot-bar { height:100%; background:var(--red); width:0%; }
 #boot-pct { font-size:0.65em; color:var(--dim2); margin-top:8px; }
 
-/* ════════════════════════════════════════
-   NAV
-════════════════════════════════════════ */
+/* ── NAV (Updated to match PC Building) ── */
 nav {
   position: sticky; top: 0; z-index: 500;
   background: rgba(5,5,5,0.88);
@@ -142,44 +140,20 @@ nav {
   height: 52px;
 }
 
-nav::after {
-  content: '';
-  position: absolute; bottom:0; left:0; right:0; height:1px;
-  background: linear-gradient(90deg, transparent, rgba(230,57,27,0.4), transparent);
-}
-
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 0.75em;
-  color: var(--red);
-  letter-spacing: 0.1em;
-}
+.nav-logo { font-family: var(--mono); font-size: 0.75em; color: var(--red); letter-spacing: 0.1em; }
 .nav-logo span { color: var(--dim2); }
 
 .nav-links { display:flex; }
 .nav-links a {
-  color: var(--dim2);
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 0.65em;
-  letter-spacing: 0.12em;
-  padding: 0 18px;
-  height: 52px;
-  display: flex; align-items: center;
-  border-left: 1px solid rgba(255,255,255,0.04);
-  transition: color .2s;
-  position: relative;
+  color: var(--dim2); text-decoration: none; font-family: var(--mono); font-size: 0.65em;
+  letter-spacing: 0.12em; padding: 0 18px; height: 52px; display: flex; align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.04); transition: color .2s;
 }
-.nav-links a::before { content: attr(data-n); color:var(--red); opacity:0.5; margin-right:6px; }
+
+.nav-links a.active { color: #fff; border-bottom: 1px solid var(--red); }
 .nav-links a:hover { color: #fff; }
 
-.nav-status {
-  display:flex; align-items:center; gap:8px;
-  font-family: var(--mono); font-size:0.62em; color:var(--dim2);
-}
-.s-dot { width:5px; height:5px; border-radius:50%; background:var(--green); animation: blink 2s ease infinite; }
-
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+/* Remove the nav::after and .nav-status from your home page CSS to keep it clean */
 
 /* ════════════════════════════════════════
    HERO  ,  no boxes, pure space + type
@@ -809,18 +783,18 @@ footer::before {
   <div id="boot-pct">0%</div>
 </div>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">TURAAB_ALI <span>// v2.0</span></div>
   <div class="nav-links">
-        <a href="/">Home</a>
+        <a href="/" class="active">Home</a>
         <a href="/pc-building/">PC Building</a>
         <a href="/problem-solving/">Problem Solving</a>
         <a href="/robotics/">Robotics</a>
         <a href="/technical/">Technical</a>
         <a href="/troubleshooting/">Troubleshooting</a>
         <a href="/photo-video/">Photography & Videography</a>
-        <a href="/contact-me/" class="active">Contact Me</a>
+        <a href="/customer-service/">Customer Service</a>
+        <a href="/contact-me/">Contact Me</a>
   </div>
 </nav>
 

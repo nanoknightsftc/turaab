@@ -18,7 +18,7 @@
           --green: #00ff88;
           --text:  #c8c3bd;
           --dim:   #3a3530;
-          --dim2:  #524d47;
+          --dim2:  #ffffff;
           --mono:  'Share Tech Mono', monospace;
           --sans:  'Space Grotesk', sans-serif;
           --disp:  'Bebas Neue', sans-serif;
@@ -54,28 +54,45 @@
                         radial-gradient(ellipse 50vw 40vh at 85% 80%, rgba(230,57,27,0.05) 0%, transparent 55%);
         }
         canvas#bg-canvas { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.4; }
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(5,5,5,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(230,57,27,0.15);
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
+}
 
-        /* NAVIGATION (Homepage Style) */
-        nav {
-            position: sticky; top: 0; z-index: 500;
-            background: rgba(5,5,5,0.88);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(230,57,27,0.15);
-            padding: 0 48px;
-            display: flex; align-items: center; justify-content: space-between;
-            height: 54px;
-        }
-        .nav-logo { font-family: var(--disp); font-size: 1.4em; color: #fff; letter-spacing: 0.1em; }
-        .nav-logo span { color: var(--red); }
-        .nav-links { display: flex; height: 100%; }
-        .nav-links a {
-            color: var(--dim2); text-decoration: none; font-family: var(--mono); font-size: 0.65em;
-            letter-spacing: 0.12em; padding: 0 18px; display: flex; align-items: center;
-            transition: all .2s; border-bottom: 1px solid transparent;
-        }
-        .nav-links a.active { color: #fff; border-bottom-color: var(--red); }
-        .nav-links a:hover { color: var(--red); }
+.nav-logo { 
+  font-family: var(--mono); 
+  font-size: 0.75em; 
+  color: var(--red); 
+  letter-spacing: 0.1em; 
+}
+.nav-logo span { color: var(--dim2); }
 
+.nav-links { display: flex; }
+.nav-links a {
+  color: var(--dim2); 
+  text-decoration: none; 
+  font-family: var(--mono); 
+  font-size: 0.65em;
+  letter-spacing: 0.12em; 
+  padding: 0 18px; 
+  height: 52px; 
+  display: flex; 
+  align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.04); 
+  transition: color .2s;
+}
+
+.nav-links a.active { 
+  color: #fff; 
+  border-bottom: 1px solid var(--red); 
+}
+.nav-links a:hover { color: #fff; }
         /* HERO SECTION */
         #hero {
             position: relative; z-index: 3;
@@ -162,14 +179,14 @@
 <nav>
   <div class="nav-logo">TURAAB_ALI <span>// v2.0</span></div>
   <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/pc-building/">PC Building</a>
-        <a href="/problem-solving/">Problem Solving</a>
-        <a href="/robotics/">Robotics</a>
-        <a href="/technical/">Technical</a>
-        <a href="/troubleshooting/">Troubleshooting</a>
-        <a href="/photo-video/">Photography & Videography</a>
-        <a href="/contact-me/" class="active">Contact Me</a>
+    <a href="/">Home</a>
+    <a href="/pc-building/">PC Building</a>
+    <a href="/problem-solving/">Problem Solving</a>
+    <a href="/robotics/"class="active">Robotics</a>
+    <a href="/technical/" >Technical</a>
+    <a href="/troubleshooting/">Troubleshooting</a>
+    <a href="/photo-video/">Photography & Videography</a>
+    <a href="/contact-me/">Contact Me</a>
   </div>
 </nav>
 
