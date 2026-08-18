@@ -103,8 +103,6 @@ nav {
 .nav-links a.active { color: #fff; border-bottom: 1px solid var(--red); }
 .nav-links a:hover { color: #fff; }
 
-/* Remove the nav::after and .nav-status from your home page CSS to keep it clean */
-
 /* ── PAGE HERO (inner pages) ─────────────────────────────────── */
 .page-hero {
   position:relative; z-index:3;
@@ -348,6 +346,8 @@ footer::before {
 <div id="globe-glow"></div>
 <div id="grain"></div>
 <canvas id="pcv"></canvas>
+
+<!-- ── CURSOR ── -->
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
@@ -360,7 +360,7 @@ footer::before {
     <a href="/problem-solving/">Problem Solving</a>
     <a href="/robotics/">Robotics</a>
     <a href="/technical/">Technical</a>
-    <a href="/troubleshooting/"class="active">Troubleshooting</a>
+    <a href="/troubleshooting/" class="active">Troubleshooting</a>
     <a href="/photo-video/">Photography & Videography</a>
     <a href="/customer-service/">Customer Service</a>
     <a href="/contact-me/">Contact Me</a>
@@ -368,7 +368,6 @@ footer::before {
 </nav>
 
 <!-- ── PAGE HERO ── -->
-<!-- CUSTOMISE PER PAGE: change the ghost word, breadcrumb, title, subtitle -->
 <div class="page-hero">
   <div class="page-hero-bg">DIAG</div>
   <div class="page-breadcrumb"><a href="/">Turaab Ali</a><span>/</span>Troubleshooting</div>
@@ -575,10 +574,6 @@ footer::before {
   <div class="foot-copy">&copy; 2026 <b>Turaab Ali</b> &nbsp;·&nbsp; All rights reserved.</div>
 </footer>
 
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║  SHARED JS ,  copy this entire <script> block into           ║
-     ║  every page, unchanged.                                     ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 <script>
 /* ── CURSOR ── */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
@@ -617,9 +612,6 @@ document.querySelectorAll('.exp-item').forEach(el=>eObs.observe(el));
 const kObs=new IntersectionObserver(en=>en.forEach(e=>{ if(e.isIntersecting)e.target.querySelectorAll('.sk-o').forEach((c,i)=>{ c.style.transitionDelay=(i*.07)+'s';c.classList.add('vis'); }); }),{threshold:.05});
 document.querySelectorAll('.skills-open').forEach(g=>kObs.observe(g));
 </script>
-<!-- ╔══════════════════════════════════════════════════════════════╗
-     ║  END OF SHARED JS                                           ║
-     ╚══════════════════════════════════════════════════════════════╝ -->
 
 </body>
 </html>

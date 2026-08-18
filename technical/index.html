@@ -6,8 +6,13 @@
 <title>Technical Knowledge - Turaab Ali</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  TURAAB ALI — SHARED SITE CSS                               ║
+     ║  Copy everything between these two comment blocks into      ║
+     ║  every page. Only change the <title> and active nav link.   ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
 <style>
-/* ── SHARED TOKENS ─────────────────────────────────────────── */
+/* ── TOKENS ─────────────────────────────────────────────────── */
 :root {
   --black:  #050505;
   --red:    #E6391B;
@@ -35,17 +40,20 @@ body {
 ::-webkit-scrollbar { width:3px; }
 ::-webkit-scrollbar-thumb { background:rgba(230,57,27,.35); }
 
-/* ── ATMOSPHERE ── */
+/* ── FULL-PAGE ATMOSPHERE ────────────────────────────────────── */
+/* dot grid */
 body::before {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background-image: radial-gradient(circle, rgba(230,57,27,.18) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 20%, transparent 85%);
 }
+/* scanlines */
 body::after {
   content:''; position:fixed; inset:0; z-index:1; pointer-events:none;
   background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.06) 2px,rgba(0,0,0,.06) 4px);
 }
+/* roaming glow */
 #globe-glow {
   position:fixed; inset:0; z-index:0; pointer-events:none;
   background:
@@ -58,18 +66,20 @@ body::after {
   50%  { transform:translate(3vw,-4vh) scale(1.04); }
   100% { transform:translate(-2vw,3vh) scale(.97); }
 }
+/* grain */
 #grain {
   position:fixed; inset:0; z-index:2; pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   opacity:.025;
 }
+/* particles canvas */
 #pcv { position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.22; }
 
-/* ── CURSOR ── */
+/* ── CURSOR ──────────────────────────────────────────────────── */
 #cur      { position:fixed; width:4px; height:4px; background:var(--red); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); }
 #cur-ring { position:fixed; width:26px; height:26px; border:1px solid var(--red); pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:.45; transition:width .3s,height .3s,opacity .3s; }
 
-/* ── NAV ── */
+/* ── NAV (Updated to match PC Building) ── */
 nav {
   position: sticky; top: 0; z-index: 500;
   background: rgba(5,5,5,0.88);
@@ -80,48 +90,33 @@ nav {
   height: 52px;
 }
 
-.nav-logo { 
-  font-family: var(--mono); 
-  font-size: 0.75em; 
-  color: var(--red); 
-  letter-spacing: 0.1em; 
-}
+.nav-logo { font-family: var(--mono); font-size: 0.75em; color: var(--red); letter-spacing: 0.1em; }
 .nav-logo span { color: var(--dim2); }
 
-.nav-links { display: flex; }
+.nav-links { display:flex; }
 .nav-links a {
-  color: var(--dim2); 
-  text-decoration: none; 
-  font-family: var(--mono); 
-  font-size: 0.65em;
-  letter-spacing: 0.12em; 
-  padding: 0 18px; 
-  height: 52px; 
-  display: flex; 
-  align-items: center;
-  border-left: 1px solid rgba(255,255,255,0.04); 
-  transition: color .2s;
+  color: var(--dim2); text-decoration: none; font-family: var(--mono); font-size: 0.65em;
+  letter-spacing: 0.12em; padding: 0 18px; height: 52px; display: flex; align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.04); transition: color .2s;
 }
 
-.nav-links a.active { 
-  color: #fff; 
-  border-bottom: 1px solid var(--red); 
-}
+.nav-links a.active { color: #fff; border-bottom: 1px solid var(--red); }
 .nav-links a:hover { color: #fff; }
 
-/* Remove the nav::after and .nav-status from your home page CSS to keep it clean */
-/* ── HERO ── */
+/* ── PAGE HERO (inner pages) ─────────────────────────────────── */
 .page-hero {
   position:relative; z-index:3;
   padding:80px 10vw 60px;
   border-bottom:1px solid rgba(255,255,255,.04);
   overflow:hidden;
 }
+/* vertical accent line */
 .page-hero::before {
   content:''; position:absolute;
   left:10vw; top:0; bottom:0; width:1px;
   background:linear-gradient(to bottom,transparent,rgba(230,57,27,.3) 30%,rgba(230,57,27,.3) 70%,transparent);
 }
+/* background ghost word */
 .page-hero-bg {
   position:absolute; right:-2vw; top:50%;
   transform:translateY(-50%);
@@ -132,7 +127,10 @@ nav {
   pointer-events:none; user-select:none; line-height:1;
   animation:breatheText 8s ease-in-out infinite alternate;
 }
-@keyframes breatheText { 0% { -webkit-text-stroke-color:rgba(230,57,27,.06); } 100% { -webkit-text-stroke-color:rgba(230,57,27,.12); } }
+@keyframes breatheText {
+  0%   { -webkit-text-stroke-color:rgba(230,57,27,.06); }
+  100% { -webkit-text-stroke-color:rgba(230,57,27,.12); }
+}
 .page-breadcrumb {
   font-family:var(--mono); font-size:.65em;
   color:var(--dim2); letter-spacing:.12em;
@@ -157,58 +155,203 @@ nav {
   opacity:0; animation:fadeUp .7s ease .4s forwards;
 }
 
-/* ── LAYOUT ── */
-main { position:relative; z-index:3; max-width:1280px; margin:0 auto; padding:0 10vw 120px; }
-.rule { width:100%; height:1px; background:linear-gradient(90deg,rgba(230,57,27,.3),rgba(255,255,255,.04) 50%,transparent); margin:0; }
-.sec { padding:80px 0; position:relative; opacity:0; transform:translateY(32px); transition:opacity .8s cubic-bezier(0.16,1,0.3,1),transform .8s cubic-bezier(0.16,1,0.3,1); }
+/* ── MAIN LAYOUT ─────────────────────────────────────────────── */
+main {
+  position:relative; z-index:3;
+  max-width:1280px; margin:0 auto;
+  padding:0 10vw 120px;
+}
+
+/* horizontal rule between sections */
+.rule {
+  width:100%; height:1px;
+  background:linear-gradient(90deg,rgba(230,57,27,.3),rgba(255,255,255,.04) 50%,transparent);
+  margin:0;
+}
+
+/* ── SECTION ─────────────────────────────────────────────────── */
+.sec {
+  padding:80px 0;
+  position:relative;
+  opacity:0; transform:translateY(32px);
+  transition:opacity .8s cubic-bezier(0.16,1,0.3,1),transform .8s cubic-bezier(0.16,1,0.3,1);
+}
 .sec.vis { opacity:1; transform:none; }
-.sec::before { content:''; position:absolute; left:-2vw; top:0; height:100%; width:1px; background:linear-gradient(to bottom,transparent,rgba(230,57,27,.18) 30%,rgba(230,57,27,.18) 70%,transparent); }
+/* left accent line */
+.sec::before {
+  content:''; position:absolute;
+  left:-2vw; top:0; height:100%; width:1px;
+  background:linear-gradient(to bottom,transparent,rgba(230,57,27,.18) 30%,rgba(230,57,27,.18) 70%,transparent);
+}
+
+/* ── SECTION HEADER ──────────────────────────────────────────── */
 .sec-hd { display:flex; align-items:baseline; gap:20px; margin-bottom:52px; }
 .sec-num { font-family:var(--mono); font-size:.65em; color:var(--red); letter-spacing:.12em; opacity:.7; }
 .sec-title { font-family:var(--disp); font-size:2.8em; color:#fff; letter-spacing:.07em; line-height:1; }
 .sec-slug  { font-family:var(--mono); font-size:.6em; color:var(--dim2); letter-spacing:.14em; margin-left:auto; }
 
-.intro-text { font-size:.96em; line-height:1.95; color:rgba(200,195,189,.6); max-width:760px; margin-bottom:20px; }
+/* ── INTRO TEXT ──────────────────────────────────────────────── */
+.intro-text {
+  font-size:.96em; line-height:1.95;
+  color:rgba(200,195,189,.6);
+  max-width:760px; margin-bottom:20px;
+}
 .intro-text strong { color:var(--text); font-weight:600; }
 
-/* ── LISTS & GRIDS ── */
-.skills-open { display:grid; grid-template-columns:repeat(3,1fr); gap:0; }
+/* ── EXPERIENCE ITEMS (no solid fill — border lines only) ────── */
+.exp-list { display:flex; flex-direction:column; gap:0; }
+
+.exp-item {
+  padding:40px 0 40px 28px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  border-left:1px solid rgba(230,57,27,.25);
+  position:relative;
+  opacity:0; transform:translateX(-12px);
+  transition:opacity .6s ease, transform .6s ease, border-color .3s;
+}
+.exp-item.vis { opacity:1; transform:none; }
+.exp-item:hover { border-left-color:rgba(230,57,27,.7); }
+
+/* top rule animates on hover */
+.exp-item::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:var(--red); transform:scaleX(0); transform-origin:left;
+  transition:transform .4s cubic-bezier(0.16,1,0.3,1);
+}
+.exp-item:hover::before { transform:scaleX(1); }
+
+.exp-tag {
+  font-family:var(--mono); font-size:.6em;
+  color:var(--red); letter-spacing:.16em; text-transform:uppercase;
+  margin-bottom:10px; opacity:.7;
+}
+.exp-title {
+  font-size:1.02em; font-weight:700; color:rgba(255,255,255,.85);
+  margin-bottom:12px; letter-spacing:-.01em;
+}
+.exp-body {
+  font-size:.9em; line-height:1.85;
+  color:rgba(200,195,189,.55); margin-bottom:16px;
+}
+.exp-list-inner { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.exp-list-inner li {
+  font-size:.85em; line-height:1.7;
+  color:var(--dim2); padding-left:18px; position:relative;
+}
+.exp-list-inner li::before {
+  content:''; position:absolute; left:0; top:9px;
+  width:6px; height:1px; background:var(--red); opacity:.6;
+}
+
+/* ── PROCESS LIST ────────────────────────────────────────────── */
+.proc-list { list-style:none; display:flex; flex-direction:column; gap:0; }
+.proc-list li {
+  display:grid; grid-template-columns:120px 1fr; gap:24px;
+  padding:28px 0; border-bottom:1px solid rgba(255,255,255,.05);
+  position:relative;
+}
+.proc-list li::before {
+  content:''; position:absolute; left:0; bottom:0; width:100%; height:1px;
+  background:linear-gradient(90deg,rgba(230,57,27,.25),transparent 40%);
+}
+.proc-num {
+  font-family:var(--disp); font-size:2.4em;
+  color:transparent; -webkit-text-stroke:1px rgba(230,57,27,.2);
+  line-height:1; letter-spacing:.05em; align-self:start;
+}
+.proc-right {}
+.proc-label {
+  font-family:var(--mono); font-size:.6em;
+  color:var(--red); letter-spacing:.16em; text-transform:uppercase;
+  margin-bottom:6px; opacity:.7;
+}
+.proc-title {
+  font-family:var(--disp); font-size:1.5em;
+  color:#fff; letter-spacing:.05em; margin-bottom:8px;
+}
+.proc-body { font-size:.88em; line-height:1.85; color:rgba(200,195,189,.55); }
+
+/* ── SKILLS GRID (lines only, no fill) ───────────────────────── */
+.skills-open {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+}
 .sk-o {
-  padding:36px 32px 36px 0; border-bottom:1px solid rgba(255,255,255,.05); border-right:1px solid rgba(255,255,255,.04); position:relative;
-  opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease, padding-left .3s cubic-bezier(0.16,1,0.3,1);
+  padding:36px 32px 36px 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  border-right:1px solid rgba(255,255,255,.04);
+  position:relative;
+  transition:padding-left .3s cubic-bezier(0.16,1,0.3,1);
+  opacity:0; transform:translateY(18px);
+  transition:opacity .5s ease, transform .5s ease, padding-left .3s cubic-bezier(0.16,1,0.3,1);
 }
 .sk-o:nth-child(3n) { border-right:none; }
-.sk-o::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform .4s cubic-bezier(0.16,1,0.3,1); }
+.sk-o::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:var(--red); transform:scaleX(0); transform-origin:left;
+  transition:transform .4s cubic-bezier(0.16,1,0.3,1);
+}
 .sk-o:hover { padding-left:10px; }
 .sk-o:hover::before { transform:scaleX(1); }
 .sk-o.vis { opacity:1; transform:none; }
+
 .sk-o-num  { font-family:var(--mono); font-size:.58em; color:var(--red); opacity:.6; letter-spacing:.14em; margin-bottom:14px; }
 .sk-o-title{ font-size:.98em; font-weight:700; color:rgba(255,255,255,.82); margin-bottom:10px; }
 .sk-o-body { font-size:.85em; line-height:1.78; color:var(--dim2); }
-.sk-o-list { list-style:none; }
-.sk-o-list li { font-size:.85em; color:var(--dim2); padding-left:14px; position:relative; margin-bottom:4px; }
-.sk-o-list li::before { content:''; position:absolute; left:0; top:8px; width:4px; height:1px; background:var(--red); }
 
-/* ── FOOTER ── */
-footer { position:relative; z-index:3; border-top:1px solid rgba(255,255,255,.05); padding:28px 10vw; display:flex; justify-content:space-between; align-items:center; }
-footer::before { content:''; position:absolute; top:0; left:10%; right:10%; height:1px; background:linear-gradient(90deg,transparent,rgba(230,57,27,.35),transparent); }
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  position:relative; z-index:3;
+  border-top:1px solid rgba(255,255,255,.05);
+  padding:28px 10vw;
+  display:flex; justify-content:space-between; align-items:center;
+}
+footer::before {
+  content:''; position:absolute; top:0; left:10%; right:10%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(230,57,27,.35),transparent);
+}
 .foot-logo { font-family:var(--disp); font-size:1.3em; letter-spacing:.1em; color:var(--dim2); }
 .foot-copy { font-family:var(--mono); font-size:.6em; color:var(--dim); letter-spacing:.1em; }
 .foot-copy b { color:var(--red); }
 
+/* ── SHARED KEYFRAMES ─────────────────────────────────────────── */
 @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
-@media(max-width:1000px){ .skills-open { grid-template-columns:repeat(2,1fr); } }
-@media(max-width:640px){ .nav-links { display:none; } .skills-open { grid-template-columns:1fr; } footer { flex-direction:column; } }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media(max-width:1000px){
+  .skills-open { grid-template-columns:repeat(2,1fr); }
+  .sk-o:nth-child(3n)  { border-right:1px solid rgba(255,255,255,.04); }
+  .sk-o:nth-child(2n)  { border-right:none; }
+  .proc-list li { grid-template-columns:60px 1fr; }
+}
+@media(max-width:640px){
+  nav { padding:0 20px; }
+  .nav-links { display:none; }
+  .page-hero, main { padding-left:6vw; padding-right:6vw; }
+  .skills-open { grid-template-columns:1fr; }
+  .sk-o { border-right:none !important; padding-right:0; }
+  .proc-list li { grid-template-columns:1fr; }
+  .proc-num { font-size:2em; }
+  footer { flex-direction:column; gap:10px; text-align:center; }
+}
 </style>
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  END OF SHARED CSS — copy everything above this line        ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+
 </head>
 <body>
 
+<!-- atmosphere -->
 <div id="globe-glow"></div>
 <div id="grain"></div>
 <canvas id="pcv"></canvas>
+
+<!-- ── CURSOR ── -->
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
+<!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">TURAAB_ALI <span>// v2.0</span></div>
   <div class="nav-links">
@@ -224,6 +367,7 @@ footer::before { content:''; position:absolute; top:0; left:10%; right:10%; heig
   </div>
 </nav>
 
+<!-- ── PAGE HERO ── -->
 <div class="page-hero">
   <div class="page-hero-bg">KNOW</div>
   <div class="page-breadcrumb"><a href="/">Turaab Ali</a><span>/</span>Technical</div>
@@ -231,8 +375,10 @@ footer::before { content:''; position:absolute; top:0; left:10%; right:10%; heig
   <p class="page-subtitle">// Deep understanding of computer architecture, component<br>interoperability, and emerging hardware standards.</p>
 </div>
 
+<!-- ── MAIN ── -->
 <main>
-  <!-- 01 OVERVIEW -->
+
+  <!-- 01 CORE PHILOSOPHY -->
   <div class="sec" id="about">
     <div class="sec-hd">
       <span class="sec-num">[ 01 ]</span>
@@ -244,115 +390,188 @@ footer::before { content:''; position:absolute; top:0; left:10%; right:10%; heig
 
   <div class="rule"></div>
 
-  <!-- 02 KNOWLEDGE AREAS -->
+  <!-- 02 TECHNICAL DOMAINS -->
   <div class="sec" id="knowledge">
     <div class="sec-hd">
       <span class="sec-num">[ 02 ]</span>
       <h2 class="sec-title">TECHNICAL DOMAINS</h2>
       <span class="sec-slug">// architecture.index</span>
     </div>
-    <div class="skills-open">
-      <div class="sk-o">
-        <div class="sk-o-num">KNOW-001</div>
-        <div class="sk-o-title">Computer Architecture</div>
-        <ul class="sk-o-list">
-          <li>x86 and ARM Architectures</li>
-          <li>Cache hierarchy (L1/L2/L3)</li>
-          <li>PCIe 5.0 lanes & bandwidth</li>
-          <li>Multi-threading logic</li>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-tag">Core Architecture</div>
+        <div class="exp-title">Computer Architecture</div>
+        <p class="exp-body">Deep familiarity with hardware processing systems, compute instruction sets, and bus bandwidth limits[cite: 3].</p>
+        <ul class="exp-list-inner">
+          <li>x86 and ARM Architectures[cite: 3]</li>
+          <li>Cache hierarchy (L1/L2/L3)[cite: 3]</li>
+          <li>PCIe 5.0 lanes & bandwidth[cite: 3]</li>
+          <li>Multi-threading logic[cite: 3]</li>
         </ul>
       </div>
 
-      <div class="sk-o">
-        <div class="sk-o-num">KNOW-002</div>
-        <div class="sk-o-title">Memory & Storage</div>
-        <ul class="sk-o-list">
-          <li>DDR4/DDR5 Timings & Latency</li>
-          <li>NVMe Gen 4/5 throughput</li>
-          <li>RAID 0/1/5/10 Configurations</li>
-          <li>M.2 Thermal Management</li>
+      <div class="exp-item">
+        <div class="exp-tag">Data & Storage</div>
+        <div class="exp-title">Memory & Storage</div>
+        <p class="exp-body">Evaluating throughput performance, controller capabilities, and array configurations for performance stability[cite: 3].</p>
+        <ul class="exp-list-inner">
+          <li>DDR4/DDR5 Timings & Latency[cite: 3]</li>
+          <li>NVMe Gen 4/5 throughput[cite: 3]</li>
+          <li>RAID 0/1/5/10 Configurations[cite: 3]</li>
+          <li>M.2 Thermal Management[cite: 3]</li>
         </ul>
       </div>
 
-      <div class="sk-o">
-        <div class="sk-o-num">KNOW-003</div>
-        <div class="sk-o-title">Graphics Systems</div>
-        <ul class="sk-o-list">
-          <li>NVIDIA/AMD Architecture</li>
-          <li>VRAM allocation logic</li>
-          <li>Ray Tracing & DLSS/FSR</li>
-          <li>DisplayPort/HDMI standards</li>
+      <div class="exp-item">
+        <div class="exp-tag">Rendering & Display</div>
+        <div class="exp-title">Graphics Systems</div>
+        <p class="exp-body">Analyzing VRAM allocation logic, rendering pipeline architecture, and high-frequency display standards[cite: 3].</p>
+        <ul class="exp-list-inner">
+          <li>NVIDIA/AMD Architecture[cite: 3]</li>
+          <li>VRAM allocation logic[cite: 3]</li>
+          <li>Ray Tracing & DLSS/FSR[cite: 3]</li>
+          <li>DisplayPort/HDMI standards[cite: 3]</li>
         </ul>
       </div>
 
-      <div class="sk-o">
-        <div class="sk-o-num">KNOW-004</div>
-        <div class="sk-o-title">Operating Systems</div>
-        <ul class="sk-o-list">
-          <li>Windows Server 2022 Config</li>
-          <li>Linux Kernel management</li>
-          <li>BIOS/UEFI Firmware logic</li>
-          <li>Driver-level optimization</li>
+      <div class="exp-item">
+        <div class="exp-tag">System Software</div>
+        <div class="exp-title">Operating Systems</div>
+        <p class="exp-body">System kernel deployment, server environment maintenance, and low-level firmware optimizations[cite: 3].</p>
+        <ul class="exp-list-inner">
+          <li>Windows Server 2022 Config[cite: 3]</li>
+          <li>Linux Kernel management[cite: 3]</li>
+          <li>BIOS/UEFI Firmware logic[cite: 3]</li>
+          <li>Driver-level optimization[cite: 3]</li>
         </ul>
       </div>
 
-      <div class="sk-o">
-        <div class="sk-o-num">KNOW-005</div>
-        <div class="sk-o-title">System Networking</div>
-        <ul class="sk-o-list">
-          <li>Ethernet vs Fiber latency</li>
-          <li>Network Card (NIC) limits</li>
-          <li>Bandwidth bottlenecking</li>
-          <li>WiFi 6E/7 standards</li>
+      <div class="exp-item">
+        <div class="exp-tag">Interconnects</div>
+        <div class="exp-title">System Networking</div>
+        <p class="exp-body">Optimizing packet transit delay, network interface card hardware limits, and physical media throughput[cite: 3].</p>
+        <ul class="exp-list-inner">
+          <li>Ethernet vs Fiber latency[cite: 3]</li>
+          <li>Network Card (NIC) limits[cite: 3]</li>
+          <li>Bandwidth bottlenecking[cite: 3]</li>
+          <li>WiFi 6E/7 standards[cite: 3]</li>
         </ul>
       </div>
 
-      <div class="sk-o">
-        <div class="sk-o-num">KNOW-006</div>
-        <div class="sk-o-title">Component Pairing</div>
-        <ul class="sk-o-list">
-          <li>Socket/Motherboard matching</li>
-          <li>PSU Wattage Headroom calc</li>
-          <li>Cooling clearance (AIO/Air)</li>
-          <li>XMP/EXPO overclocking profiles</li>
+      <div class="exp-item">
+        <div class="exp-tag">Interoperability</div>
+        <div class="exp-title">Component Pairing</div>
+        <p class="exp-body">Calculating structural tolerances, power supply stability margins, and component socket alignments[cite: 3].</p>
+        <ul class="exp-list-inner">
+          <li>Socket/Motherboard matching[cite: 3]</li>
+          <li>PSU Wattage Headroom calc[cite: 3]</li>
+          <li>Cooling clearance (AIO/Air)[cite: 3]</li>
+          <li>XMP/EXPO overclocking profiles[cite: 3]</li>
         </ul>
       </div>
+
     </div>
   </div>
 
   <div class="rule"></div>
 
-  <!-- 03 APPLICATION -->
-  <div class="sec">
+  <!-- 03 PROCESS -->
+  <div class="sec" id="process">
     <div class="sec-hd">
       <span class="sec-num">[ 03 ]</span>
       <h2 class="sec-title">KNOWLEDGE APPLICATION</h2>
       <span class="sec-slug">// implementation.sys</span>
     </div>
+    <p class="intro-text" style="margin-bottom:40px">Translating architectural data into practical hardware implementation[cite: 3].</p>
+    <ol class="proc-list">
+      <li>
+        <span class="proc-num">01</span>
+        <div class="proc-right">
+          <div class="proc-label">STEP [ 1 ]</div>
+          <div class="proc-title">Build Planning</div>
+          <div class="proc-body">Selecting optimal components that work together efficiently within strict budget and physical constraints[cite: 3].</div>
+        </div>
+      </li>
+      <li>
+        <span class="proc-num">02</span>
+        <div class="proc-right">
+          <div class="proc-label">STEP [ 2 ]</div>
+          <div class="proc-title">Performance Tuning</div>
+          <div class="proc-body">Identifying system bottlenecks and tuning BIOS/OS settings for maximum stable output[cite: 3].</div>
+        </div>
+      </li>
+      <li>
+        <span class="proc-num">03</span>
+        <div class="proc-right">
+          <div class="proc-label">STEP [ 3 ]</div>
+          <div class="proc-title">Client Advisory</div>
+          <div class="proc-body">Translating complex architecture data into plain terms for professional hardware recommendations[cite: 3].</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- 04 TECHNICAL CAPABILITIES -->
+  <div class="sec" id="capabilities">
+    <div class="sec-hd">
+      <span class="sec-num">[ 04 ]</span>
+      <h2 class="sec-title">TECHNICAL CAPABILITIES</h2>
+      <span class="sec-slug">// capabilities.index</span>
+    </div>
     <div class="skills-open">
+
       <div class="sk-o">
-        <div class="sk-o-title">Build Planning</div>
-        <div class="sk-o-body">Selecting optimal components that work together efficiently within strict budget and physical constraints.</div>
+        <div class="sk-o-num">CAP-001</div>
+        <div class="sk-o-title">Architectural Analysis</div>
+        <div class="sk-o-body">Evaluating CPU instruction pipeline and cache structures to identify throughput bottlenecks.</div>
       </div>
+
       <div class="sk-o">
-        <div class="sk-o-title">Performance Tuning</div>
-        <div class="sk-o-body">Identifying system bottlenecks and tuning BIOS/OS settings for maximum stable output.</div>
+        <div class="sk-o-num">CAP-002</div>
+        <div class="sk-o-title">Memory Optimization</div>
+        <div class="sk-o-body">Tuning RAM sub-timings, voltage profiles, and sub-system latency for maximum throughput[cite: 3].</div>
       </div>
+
       <div class="sk-o">
-        <div class="sk-o-title">Client Advisory</div>
-        <div class="sk-o-body">Translating complex architecture data into plain terms for professional hardware recommendations.</div>
+        <div class="sk-o-num">CAP-003</div>
+        <div class="sk-o-title">Storage Arrays</div>
+        <div class="sk-o-body">Designing high-throughput redundant storage arrays and evaluating controller hardware bandwidth[cite: 3].</div>
       </div>
+
+      <div class="sk-o">
+        <div class="sk-o-num">CAP-004</div>
+        <div class="sk-o-title">Platform Firmware</div>
+        <div class="sk-o-body">Configuring low-level UEFI/BIOS parameters, memory training profiles, and device controllers[cite: 3].</div>
+      </div>
+
+      <div class="sk-o">
+        <div class="sk-o-num">CAP-005</div>
+        <div class="sk-o-title">Server Environments</div>
+        <div class="sk-o-body">Setting up Datacenter OS instances, multi-user environments, and driver hardware compatibility[cite: 3].</div>
+      </div>
+
+      <div class="sk-o">
+        <div class="sk-o-num">CAP-006</div>
+        <div class="sk-o-title">Bus & Bandwidth Management</div>
+        <div class="sk-o-body">Calculating PCIe lane allocations across primary, secondary, and chipsets interconnects[cite: 3].</div>
+      </div>
+
     </div>
   </div>
+
 </main>
 
+<!-- ── FOOTER ── -->
 <footer>
   <div class="foot-logo">TURAAB_ALI</div>
   <div class="foot-copy">&copy; 2026 <b>Turaab Ali</b> &nbsp;·&nbsp; All rights reserved.</div>
 </footer>
 
 <script>
-/* ── SHARED JS ── */
+/* ── CURSOR ── */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{ mx=e.clientX;my=e.clientY; cur.style.left=mx+'px';cur.style.top=my+'px'; });
@@ -362,6 +581,7 @@ document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('mouseleave',()=>{ ring.style.width='26px';ring.style.height='26px';ring.style.opacity='.45'; });
 });
 
+/* ── PARTICLES ── */
 const cv=document.getElementById('pcv'),cx=cv.getContext('2d');
 let W,H,pts=[];
 function resize(){ W=cv.width=window.innerWidth;H=cv.height=window.innerHeight; }
@@ -376,10 +596,18 @@ function loop(){ cx.clearRect(0,0,W,H);pts.forEach(p=>{p.tick();p.draw();});draw
 resize(); for(let i=0;i<110;i++)pts.push(new P()); loop();
 window.addEventListener('resize',()=>{ resize();pts.forEach(p=>p.reset()); });
 
+/* ── SCROLL REVEAL ,  sections ── */
 const sObs=new IntersectionObserver(en=>en.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('vis'); }),{threshold:.07});
 document.querySelectorAll('.sec').forEach(s=>sObs.observe(s));
+
+/* ── SCROLL REVEAL ,  exp items ── */
+const eObs=new IntersectionObserver(en=>en.forEach((e,i)=>{ if(e.isIntersecting){ e.target.style.transitionDelay=(i*.08)+'s'; e.target.classList.add('vis'); } }),{threshold:.05});
+document.querySelectorAll('.exp-item').forEach(el=>eObs.observe(el));
+
+/* ── SCROLL REVEAL ,  skill cells ── */
 const kObs=new IntersectionObserver(en=>en.forEach(e=>{ if(e.isIntersecting)e.target.querySelectorAll('.sk-o').forEach((c,i)=>{ c.style.transitionDelay=(i*.07)+'s';c.classList.add('vis'); }); }),{threshold:.05});
 document.querySelectorAll('.skills-open').forEach(g=>kObs.observe(g));
 </script>
+
 </body>
 </html>
