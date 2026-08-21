@@ -188,7 +188,7 @@ nav::after {
 }
 
 /* ════════════════════════════════════════
-   BOOT SCREEN (homepage only)
+   BOOT SCREEN (all pages)
    z-index: 8000 — above everything
 ════════════════════════════════════════ */
 #boot {
@@ -521,6 +521,179 @@ footer::before {
 }
 
 /* ════════════════════════════════════════
+   EXTRA KEYFRAMES — ANIMATION EVERYWHERE
+════════════════════════════════════════ */
+@keyframes floatY {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(230,57,27,0); }
+  50%      { box-shadow: 0 0 28px rgba(230,57,27,.35); }
+}
+@keyframes sheen {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%) skewX(-20deg); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes borderFlow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes titleGlitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 2px); }
+}
+@keyframes blinkFast {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .15; }
+}
+@keyframes scanSweep {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ════════════════════════════════════════
+   ANIMATION EVERYWHERE — GLOBAL MICRO-INTERACTIONS
+════════════════════════════════════════ */
+
+/* nav logo — blinking cursor + hover shake */
+.nav-logo {
+  display: inline-flex; align-items: center;
+}
+.nav-logo::after {
+  content: '_';
+  margin-left: 2px;
+  color: var(--red);
+  animation: blink 1s step-end infinite;
+}
+.nav-logo:hover { animation: titleGlitch .4s var(--ease-out); }
+
+/* section titles — subtle float + hover glitch */
+.sec-title {
+  display: inline-block;
+  transition: color .3s var(--ease-out), transform .3s var(--ease-out);
+}
+.sec-title:hover {
+  color: var(--red);
+  animation: titleGlitch .35s var(--ease-out);
+}
+
+/* section numbers — pulse */
+.sec-num { animation: blinkFast 2.2s ease-in-out infinite; }
+
+/* breadcrumb caret blink */
+.page-breadcrumb span { animation: blink 1.2s step-end infinite; }
+
+/* buttons — sheen sweep on hover */
+.btn-submit, .cta-btn, .action-btn {
+  overflow: hidden;
+}
+.btn-submit::before, .cta-btn::before, .action-btn::before {
+  content: '';
+  position: absolute; top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(230,57,27,.35), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  transition: transform .6s var(--ease-out);
+  pointer-events: none;
+}
+.btn-submit:hover::before, .cta-btn:hover::before, .action-btn:hover::before {
+  transform: translateX(320%) skewX(-20deg);
+}
+
+/* experience items — sheen sweep on hover */
+.exp-item { overflow: hidden; }
+.exp-item::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: -40%;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(230,57,27,.06), transparent);
+  transform: skewX(-20deg);
+  transition: transform .7s var(--ease-out);
+  pointer-events: none;
+}
+.exp-item:hover::after { transform: translateX(480%) skewX(-20deg); }
+
+/* exp cards & skill cards — lift + glow on hover */
+.exp-card, .skill-item, .tech-card, .spec-item, .photo-card, .image-card, .ap-card, .sk, .sk-o {
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out), border-color .3s var(--ease-out);
+}
+.exp-card:hover, .skill-item:hover, .tech-card:hover, .spec-item:hover,
+.photo-card:hover, .image-card:hover, .ap-card:hover, .sk:hover, .sk-o:hover {
+  box-shadow: 0 18px 50px -18px rgba(230,57,27,.35);
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
+
+/* page title — glitch on hover */
+.page-title { transition: color .3s var(--ease-out); }
+.page-title:hover { color: var(--red); animation: titleGlitch .4s var(--ease-out); }
+
+/* hero ghost word — parallax float */
+.page-hero-bg { animation: breatheText 8s ease-in-out infinite alternate, floatY 9s ease-in-out infinite; }
+
+/* intro-text links / strong — underline slide */
+.intro-text strong, .intro-text b {
+  position: relative;
+  transition: color .3s var(--ease-out);
+}
+.intro-text strong:hover, .intro-text b:hover { color: var(--red); }
+
+/* rule divider — animated flow */
+.rule {
+  background-size: 200% 100%;
+  animation: borderFlow 6s linear infinite;
+}
+
+/* footer logo — blinking + hover */
+.foot-logo { transition: color .3s var(--ease-out); }
+.foot-logo:hover { color: var(--red); animation: titleGlitch .35s var(--ease-out); }
+
+/* scroll progress bar (injected by JS) */
+#scroll-progress {
+  position: fixed; top: 0; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--red2));
+  z-index: 7000; pointer-events: none;
+  box-shadow: 0 0 12px rgba(230,57,27,.5);
+  transition: width .1s linear;
+}
+
+/* scan sweep overlay (injected by JS) */
+#scan-sweep {
+  position: fixed; left: 0; right: 0; top: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(230,57,27,.05), transparent);
+  z-index: 4; pointer-events: none;
+  animation: scanSweep 7s linear infinite;
+}
+
+/* animated border for image cards */
+.image-card, .photo-card { position: relative; }
+.image-card::after, .photo-card::after {
+  content: '';
+  position: absolute; inset: -1px;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, transparent, rgba(230,57,27,.5), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity .4s var(--ease-out);
+  pointer-events: none;
+  animation: borderFlow 2.6s linear infinite;
+}
+.image-card:hover::after, .photo-card:hover::after { opacity: 1; }
+
+/* ════════════════════════════════════════
    RESPONSIVE BREAKPOINTS
 ════════════════════════════════════════ */
 
@@ -600,5 +773,9 @@ footer::before {
     animation: none !important;
     opacity: 0 !important;
     pointer-events: none !important;
+  }
+
+  #scan-sweep, #scroll-progress {
+    display: none !important;
   }
 }
